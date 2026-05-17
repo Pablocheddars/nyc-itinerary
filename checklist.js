@@ -4,9 +4,9 @@ const CHECKLIST_DATA = [
     icon: "\ud83c\udfab",
     items: [
       { id: "totr", label: "Top of the Rock", time: "Slot sunset ~19:00", day: "D\u00eda 2 \u00b7 Mi\u00e9 3 jun", price: "~$46 USD", url: "https://www.topoftherocknyc.com", urlLabel: "topoftherocknyc.com" },
-      { id: "statue", label: "Estatua de la Libertad", time: "Ferry ~10:30 \u2014 pedestal", day: "D\u00eda 4 \u00b7 Vie 5 jun", price: "~$25 USD", url: "https://www.statuecruises.com", urlLabel: "statuecruises.com" },
-      { id: "summit", label: "Summit One Vanderbilt", time: "Slot 18:30", day: "D\u00eda 7 \u00b7 Lun 8 jun", price: "$44\u201360 USD", url: "https://summitov.com", urlLabel: "summitov.com" },
-      { id: "marquee", label: "Marquee Skydeck \u2014 DIPLO", time: "23:00 \u2014 Gov Ball After Dark", day: "D\u00eda 5 \u00b7 S\u00e1b 6 jun", price: "Variable", url: "https://www.edgenyc.com/marquee-skydeck/", urlLabel: "edgenyc.com \u2014 Diplo confirmado" }
+      { id: "marquee", label: "Marquee Skydeck \u2014 Kozlow x Tolga x Orson", time: "23:00 \u2014 viernes", day: "D\u00eda 4 \u00b7 Vie 5 jun", price: "~$80 USD", url: "https://www.edgenyc.com/marquee-skydeck/", urlLabel: "edgenyc.com" },
+      { id: "statue", label: "Estatua de la Libertad", time: "Ferry ~11:00 \u2014 pedestal", day: "D\u00eda 5 \u00b7 S\u00e1b 6 jun", price: "~$25 USD", url: "https://www.statuecruises.com", urlLabel: "statuecruises.com" },
+      { id: "summit", label: "Summit One Vanderbilt", time: "Slot 18:30", day: "D\u00eda 7 \u00b7 Lun 8 jun", price: "$44\u201360 USD", url: "https://summitov.com", urlLabel: "summitov.com" }
     ]
   },
   {
@@ -15,7 +15,7 @@ const CHECKLIST_DATA = [
     items: [
       { id: "momofuku", label: "Momofuku Noodle Bar", time: "Mesa ~16:00", day: "D\u00eda 2 \u00b7 Mi\u00e9 3 jun", price: "", url: "https://resy.com", urlLabel: "Resy" },
       { id: "sipguzzle", label: "Sip & Guzzle", time: "~21:00", day: "D\u00eda 2 \u00b7 Mi\u00e9 3 jun", price: "", url: "https://resy.com", urlLabel: "Resy" },
-      { id: "idachi", label: "Idachi", time: "19:30", day: "D\u00eda 4 \u00b7 Vie 5 jun", price: "", url: "https://resy.com", urlLabel: "Resy" },
+      { id: "idachi", label: "Idachi", time: "19:30", day: "D\u00eda 5 \u00b7 S\u00e1b 6 jun", price: "", url: "https://resy.com", urlLabel: "Resy" },
       { id: "maison", label: "Maison Premiere", time: "18:30 \u2014 pedir terraza", day: "D\u00eda 6 \u00b7 Dom 7 jun", price: "", url: "https://resy.com", urlLabel: "Resy" },
       { id: "crane", label: "Crane Club", time: "17:30\u201318:00 (horario wagyu burger)", day: "D\u00eda 9 \u00b7 Mi\u00e9 10 jun", price: "", url: "https://resy.com", urlLabel: "Resy" },
       { id: "eo", label: "Employees Only", time: "20:30", day: "D\u00eda 9 \u00b7 Mi\u00e9 10 jun", price: "", url: "https://resy.com", urlLabel: "Resy" }
@@ -26,16 +26,9 @@ const CHECKLIST_DATA = [
     icon: "\ud83c\udfdb\ufe0f",
     items: [
       { id: "911", label: "9/11 Memorial & Museum", time: "Slot 9:00\u201310:00", day: "D\u00eda 3 \u00b7 Jue 4 jun", price: "$25\u201336 USD", url: "https://www.911memorial.org", urlLabel: "911memorial.org" },
-      { id: "whitney", label: "Whitney Museum", time: "10:00", day: "D\u00eda 5 \u00b7 S\u00e1b 6 jun", price: "~$25 USD", url: "https://whitney.org", urlLabel: "whitney.org" },
-      { id: "vessel", label: "The Vessel", time: "15:30", day: "D\u00eda 5 \u00b7 S\u00e1b 6 jun", price: "Variable", url: "https://www.vesselnyc.com", urlLabel: "vesselnyc.com" },
+      { id: "whitney", label: "Whitney Museum", time: "10:00", day: "D\u00eda 4 \u00b7 Vie 5 jun", price: "~$25 USD", url: "https://whitney.org", urlLabel: "whitney.org" },
+      { id: "vessel", label: "The Vessel", time: "15:30", day: "D\u00eda 4 \u00b7 Vie 5 jun", price: "Variable", url: "https://www.vesselnyc.com", urlLabel: "vesselnyc.com" },
       { id: "met", label: "The Met", time: "10:00", day: "D\u00eda 8 \u00b7 Mar 9 jun", price: "~$30 USD", url: "https://www.metmuseum.org", urlLabel: "metmuseum.org" }
-    ]
-  },
-  {
-    category: "Verificar",
-    icon: "\u2753",
-    items: [
-      { id: "idachi_sun", label: "Idachi \u2014 horario viernes", time: "19:30", day: "D\u00eda 4 \u00b7 Vie 5 jun", price: "", url: "https://resy.com", urlLabel: "Confirmar en Resy al reservar" }
     ]
   }
 ];
