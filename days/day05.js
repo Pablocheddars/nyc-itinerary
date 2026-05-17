@@ -144,7 +144,7 @@ export default {
         {
           "time": "15:30",
           "name": "🏗️ Hudson Yards — The Vessel",
-          "desc": "2,500 escaleras interconectadas — subir gratis para vista del Hudson. El barrio más nuevo de Manhattan.",
+          "desc": "Estructura de 2,500 escaleras interconectadas. Reabrió en 2026 con entrada por ticket y acceso parcial (malla de seguridad en pisos altos). Reservar en vesselnyc.com.",
           "addr": null,
           "tags": [
             {
