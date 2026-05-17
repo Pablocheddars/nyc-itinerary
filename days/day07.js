@@ -1,9 +1,9 @@
 export default {
   "id": "d7",
   "number": "07",
-  "title": "The Met · <em>SoHo · Attaboy</em>",
+  "title": "The Met · <em>Eataly · Attaboy</em>",
   "date": "Domingo 8 de junio · Salida 9:30",
-  "note": "Llegar al Met antes del mediodía — los domingos se llena de turistas después.",
+  "note": "Llegar al Met antes del mediodía — los domingos se llena después. Ruta limpia: UES → Flatiron → SoHo → LES.",
   "alert": null,
   "phases": [
     {
@@ -48,12 +48,12 @@ export default {
     },
     {
       "type": "pm",
-      "label": "Tarde",
+      "label": "Tarde — bajando hacia SoHo",
       "events": [
         {
-          "time": "13:30",
-          "name": "🥯 Liberty Bagels — almuerzo rápido",
-          "desc": null,
+          "time": "~13:30",
+          "name": "🥯 Almuerzo rápido — grab & go",
+          "desc": "Algo liviano saliendo del Met. Hay opciones en la cafetería del museo o en Madison Ave.",
           "addr": null,
           "tags": [
             {
@@ -69,6 +69,29 @@ export default {
         },
         {
           "time": "~14:30",
+          "name": "🇮🇹 Eataly Flatiron",
+          "desc": "El concepto gastronómico italiano que cambió los food halls en América. Retail + restaurantes + educación en un solo espacio. Queda en la 23rd con 5th Ave — de camino bajando del Met hacia SoHo.",
+          "addr": "📍 200 5th Ave (& 23rd St), Flatiron",
+          "tags": [
+            {
+              "key": "sight",
+              "label": "Food hall"
+            },
+            {
+              "key": "must",
+              "label": "Must"
+            }
+          ],
+          "tip": {
+            "html": "<strong>Para WCI/Cheddars Group:</strong> Estudiar cómo integran venta de producto + restaurante + marca en un solo espacio. El modelo de multi-concepto bajo un techo es exactamente tu mundo. Ver pricing, señalética, cómo rotan producto fresco, y la relación entre retail y restaurante. 1h mínimo con intención."
+          },
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~15:45",
           "name": "🥐 Dominique Ansel Bakery",
           "desc": "World's Best Pastry Chef. Cronut, DKA, cookie shots. Su modelo de innovación constante con sabores rotativos mensuales es un approach de marketing directo para Brown.",
           "addr": "📍 189 Spring St, SoHo",
@@ -91,43 +114,7 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "15:00",
-          "name": "🍦 Museum of Ice Cream — SoHo",
-          "desc": "558 Broadway. 12 instalaciones + helado ilimitado + sprinkle pool. 1.5h.",
-          "addr": "museumoficecream.com — $25–33 USD.",
-          "tags": [
-            {
-              "key": "sight",
-              "label": "Paseo"
-            }
-          ],
-          "tip": null,
-          "isNew": false,
-          "isReplaced": false,
-          "replacedNote": null,
-          "isLogistic": false
-        },
-        {
           "time": "~16:30",
-          "name": "🍕 Sal & Carmine's",
-          "desc": "UWS desde 1959. Thin crust, flat, fold-in-half — el NY slice old school puro. Sin pretensiones. El baseline contra el cual medir todo lo demás. Cerca del hotel, al volver.",
-          "addr": "📍 2671 Broadway (& 102nd St), UWS",
-          "tags": [
-            {
-              "key": "pizza",
-              "label": "Pizza research"
-            }
-          ],
-          "tip": {
-            "html": "<strong>Comparar con Joe's:</strong> Ambos son NY slice clásico pero con approaches distintos. ¿Cuál te gusta más como referencia para Respect? Un slice compartido."
-          },
-          "isNew": true,
-          "isReplaced": false,
-          "replacedNote": null,
-          "isLogistic": false
-        },
-        {
-          "time": "17:00",
           "name": "🛍️ SoHo — último recorrido de compras",
           "desc": "Domingo en SoHo tiene el mejor ambiente. Lo que quedó pendiente.",
           "addr": null,
@@ -152,16 +139,11 @@ export default {
       "nightSub": "#37 Norteamérica · Walk-in · El cóctel que te crean es el mejor del viaje",
       "events": [
         {
-          "time": "18:30",
-          "name": "🍽️ Cena previa — Lafayette Bakery o LES",
-          "desc": "Lafayette Bakery en NoHo tiene pasteles de autor. O explorar el LES.",
+          "time": "~18:30",
+          "name": "🍽️ Cena en el LES",
+          "desc": "Caminar de SoHo al Lower East Side. El barrio tiene opciones infinitas — tacos, dumplings, noodles, lo que encuentren caminando. Algo liviano antes de los cócteles.",
           "addr": null,
-          "tags": [
-            {
-              "key": "bakery",
-              "label": "Bakery"
-            }
-          ],
+          "tags": [],
           "tip": null,
           "isNew": false,
           "isReplaced": false,

@@ -70,16 +70,22 @@ export default {
         },
         {
           "time": "~11:30",
-          "name": "🍕 Prince Street (si no fueron Day 5)",
-          "desc": "Backup. El pepperoni square. 10 min caminando desde Scarr's.",
-          "addr": "📍 27 Prince St, Nolita",
+          "name": "🍕 Prince Street Pizza",
+          "desc": "El pepperoni square icónico — Sicilian-style con pepperoni cups que se llenan de grasa. No es el formato de 18\" pero es imperdible para entender el square slice. La fila es larga pero vale la pena.",
+          "addr": "📍 27 Prince St, Nolita · 10 min caminando desde Scarr's",
           "tags": [
             {
               "key": "pizza",
-              "label": "Pizza"
+              "label": "Pizza research"
+            },
+            {
+              "key": "must",
+              "label": "Must"
             }
           ],
-          "tip": null,
+          "tip": {
+            "html": "<strong>Tip:</strong> Pedir el Spicy Spring (pepperoni square) — un slice compartido. Observar la operación del square slice vs round: preparación en bandeja, corte, display, pricing."
+          },
           "isNew": true,
           "isReplaced": false,
           "replacedNote": null,

@@ -96,10 +96,27 @@ export default {
       "label": "Tarde",
       "events": [
         {
-          "time": "15:30",
-          "name": "🍕 Joe's Pizza — slice clásico",
-          "desc": "Joe's Pizza desde 1975. La referencia absoluta de pizza en NY. Margherita, de pie en la calle.",
+          "time": "~15:00",
+          "name": "🌊 Battery Park — paseo costero",
+          "desc": "Vista a la Estatua desde tierra. Buena foto de cierre del ferry. Descansar en los jardines antes de caminar al Village.",
           "addr": null,
+          "tags": [
+            {
+              "key": "sight",
+              "label": "Paseo"
+            }
+          ],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~15:45",
+          "name": "🍕 Joe's Pizza — slice clásico",
+          "desc": "Joe's Pizza desde 1975. La referencia absoluta de pizza en NY. Margherita, de pie en la calle. Subway o caminar desde Battery Park hacia el norte — queda en Carmine St, West Village.",
+          "addr": "📍 7 Carmine St, West Village",
           "tags": [
             {
               "key": "pizza",
@@ -119,9 +136,9 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "16:30",
-          "name": "🌊 Battery Park — paseo costero",
-          "desc": "Vista a la Estatua desde tierra. Buena foto de cierre del día.",
+          "time": "~16:30",
+          "name": "🚶 Paseo West Village",
+          "desc": "Ya están en el Village después de Joe's. Caminar Bleecker St, Hudson St, las callecitas arboladas. El barrio más lindo de Manhattan para caminar sin rumbo. Volver al hotel cuando quieran.",
           "addr": null,
           "tags": [
             {
@@ -130,7 +147,7 @@ export default {
             }
           ],
           "tip": null,
-          "isNew": false,
+          "isNew": true,
           "isReplaced": false,
           "replacedNote": null,
           "isLogistic": false
