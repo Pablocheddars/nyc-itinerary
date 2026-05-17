@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYC Junio 2026 — Dani & Pablo</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--card:#FFF;--dark:#1C1917;--dark2:#292524;--txt:#1C1917;--muted:#78716C;--light:#F5F0E8;
+  --border:#D6D3D1;--border-light:#E7E5E4;
+  --pizza:#C2410C;--bakery:#92400E;--breakfast:#4D7C0F;--burger:#9F1239;--bar:#6D28D9;--sight:#0369A1;--shop:#64748B;--logistic:#1D4ED8;
+  --night-bg:#1C1917;--night-card:#292524;--night-txt:#F5F0E8;--night-muted:#A8A29E;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+.hdr{background:var(--dark);color:var(--light);padding:2.5rem 1.5rem 2rem;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,.015) 20px,rgba(255,255,255,.015) 21px)}
+.hdr-in{max-width:920px;margin:0 auto;position:relative;z-index:1}
+.hdr-pre{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#A8A29E;margin-bottom:.5rem}
+.hdr h1{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:400;line-height:1.15}
+.hdr h1 em{font-style:italic;color:#FDBA74}
+.hdr-sub{font-size:.85rem;color:#A8A29E;margin-top:.35rem;max-width:620px}
+.hdr-pills{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+.hdr-pill{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.05em;color:#D6D3D1;padding:.25rem .6rem;border:1px solid #44403C;border-radius:3px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-in{max-width:920px;margin:0 auto;display:flex;padding:0 1.5rem}
+.nb{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.06em;text-transform:uppercase;padding:.8rem .85rem;border:none;background:none;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
+.nb:hover{color:var(--txt)}.nb.on{color:var(--pizza);border-bottom-color:var(--pizza)}
+
+/* CONTENT */
+.ct{max-width:920px;margin:0 auto;padding:1.5rem}
+.sec{display:none}.sec.on{display:block}
+
+/* DAY HEADER */
+.dh{margin-bottom:1.5rem}
+.dh-num{font-family:'Instrument Serif',serif;font-size:3.2rem;line-height:1;color:#D6D3D1}
+.dh-title{font-family:'Instrument Serif',serif;font-size:1.65rem;font-weight:400;margin-top:-.2rem}
+.dh-title em{font-style:italic;color:var(--pizza)}
+.dh-date{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.dh-note{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:.5rem;max-width:600px;line-height:1.5}
+
+/* PHASE LABELS */
+.phase{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:1.75rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.phase .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:.4rem;vertical-align:middle}
+.phase .dot.am{background:#D97706}.phase .dot.pm{background:#65A30D}.phase .dot.night{background:#7C3AED}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;margin-bottom:.75rem;position:relative;transition:box-shadow .2s}
+.card:hover{box-shadow:0 3px 16px rgba(0,0,0,.05)}
+.card.new{border-left:3px solid var(--pizza)}
+.card.new::after{content:'NUEVO';position:absolute;top:.65rem;right:.75rem;font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.08em;background:#FFF7ED;color:var(--pizza);padding:.15rem .45rem;border-radius:3px;font-weight:600}
+.card.replaced{opacity:.5;border-left:3px solid #94A3B8;text-decoration:line-through}
+.card.replaced .c-name,.card.replaced .c-desc{text-decoration:line-through}
+
+.c-row{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.35rem}
+.c-time{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);min-width:42px;padding-top:.25rem}
+.c-body{flex:1}
+.c-name{font-family:'Instrument Serif',serif;font-size:1.1rem;font-weight:400;line-height:1.3}
+.c-desc{font-size:.8rem;color:#57534E;line-height:1.55;margin-top:.2rem}
+.c-addr{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:.35rem}
+.c-tags{display:flex;gap:.3rem;margin-top:.4rem;flex-wrap:wrap}
+.tg{font-size:.58rem;font-weight:600;padding:.15rem .4rem;border-radius:3px;letter-spacing:.04em;text-transform:uppercase}
+.tg.pizza{background:#FFF7ED;color:var(--pizza)}.tg.bakery{background:#FFFBEB;color:var(--bakery)}
+.tg.breakfast{background:#F0FDF4;color:var(--breakfast)}.tg.burger{background:#FFF1F2;color:var(--burger)}
+.tg.bar{background:#F5F3FF;color:var(--bar)}.tg.sight{background:#F0F9FF;color:var(--sight)}
+.tg.shop{background:#F8FAFC;color:var(--shop)}.tg.must{background:var(--pizza);color:#fff}
+
+.c-tip{margin-top:.6rem;padding:.55rem .75rem;background:#FAFAF9;border-radius:4px;font-size:.78rem;color:#57534E;border-left:2px solid var(--border-light);line-height:1.5}
+.c-tip strong{color:var(--txt)}
+.c-replaced-note{font-size:.72rem;color:var(--logistic);font-weight:500;margin-top:.3rem}
+
+/* NIGHT BLOCK */
+.night-block{background:var(--night-bg);border-radius:8px;padding:1.25rem;margin-top:1rem;color:var(--night-txt)}
+.night-block .phase{color:var(--night-muted);border-bottom-color:#44403C;margin-top:.5rem}
+.night-block .card{background:var(--night-card);border-color:#44403C;color:var(--night-txt)}
+.night-block .card.new{border-left-color:#FDBA74}
+.night-block .card.new::after{background:#44403C;color:#FDBA74}
+.night-block .c-desc,.night-block .c-tip{color:var(--night-muted)}
+.night-block .c-tip{background:#1C1917;border-left-color:#44403C}
+.night-block .c-tip strong{color:var(--night-txt)}
+.night-block .c-name{color:var(--night-txt)}
+.night-title{font-family:'Instrument Serif',serif;font-size:1.15rem;font-weight:400}
+.night-sub{font-size:.75rem;color:var(--night-muted);margin-top:.15rem}
+
+/* BARI NOTE */
+.bari{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FCD34D;border-radius:6px;padding:1rem 1.15rem;margin-bottom:1.25rem;font-size:.78rem;line-height:1.55;color:#78350F}
+.bari strong{color:#92400E}
+
+@media(max-width:640px){
+  .ct{padding:1.25rem 1rem}.hdr{padding:2rem 1rem 1.5rem}.nav-in{padding:0 .75rem}
+  .nb{padding:.7rem .6rem;font-size:.58rem}.c-row{flex-direction:column;gap:.25rem}
+  .card.new::after{position:static;display:inline-block;margin-top:.3rem}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr"><div class="hdr-in">
+  <div class="hdr-pre">Itinerario completo · Junio 2–11, 2026</div>
+  <h1>Dani & Pablo en <em>Nueva York</em></h1>
+  <p class="hdr-sub">Itinerario original de Dani + adiciones de research gastronómico para Respect Pizza y Brown Sweet Factory. Formato bariatric-friendly: compartir todo, porciones chicas, hambre frecuente.</p>
+  <div class="hdr-pills">
+    <span class="hdr-pill">🛬 JFK 09:40 Jun 2</span>
+    <span class="hdr-pill">🛫 JFK 19:50 Jun 11</span>
+    <span class="hdr-pill">🏨 The Belleclaire · UWS</span>
+    <span class="hdr-pill">9 noches</span>
+  </div>
+</div></div>
+
+<nav class="nav"><div class="nav-in">
+  <button class="nb on" onclick="go('d1')">Día 1</button>
+  <button class="nb" onclick="go('d2')">Día 2</button>
+  <button class="nb" onclick="go('d3')">Día 3</button>
+  <button class="nb" onclick="go('d4')">Día 4</button>
+  <button class="nb" onclick="go('d5')">Día 5</button>
+  <button class="nb" onclick="go('d6')">Día 6</button>
+  <button class="nb" onclick="go('d7')">Día 7</button>
+  <button class="nb" onclick="go('d8')">Día 8</button>
+  <button class="nb" onclick="go('d9')">Día 9</button>
+  <button class="nb" onclick="go('d10')">Día 10</button>
+</div></nav>
+
+<div class="ct">
+
+<!-- ===================== DÍA 1 ===================== -->
+<div class="sec on" id="d1">
+<div class="dh">
+  <div class="dh-num">01</div>
+  <div class="dh-title">Llegada & <em>Upper West Side</em></div>
+  <div class="dh-date">Lunes 2 de junio · Llegada JFK 09:40</div>
+  <div class="dh-note">Día suave. El jet lag Santiago→NYC es de 4 horas — no planificar demasiado.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Llegada</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~11:00</span><div class="c-body">
+    <div class="c-name">✈️ Aterrizaje JFK o EWR</div>
+    <div class="c-desc">Uber desde JFK ~$55–70 / ~50 min. Desde EWR ~$70–85 / ~1h.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~13:00</span><div class="c-body">
+    <div class="c-name">🏨 Check-in The Belleclaire</div>
+    <div class="c-desc">Check-in estándar a las 15h. Dejar maletas y salir a explorar.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~14:00</span><div class="c-body">
+    <div class="c-name">🥯 Apollo Bagels — primer bagel de NY</div>
+    <div class="c-desc">10 minutos del hotel. Everything bagel con cream cheese y lox — el ritual de llegada.</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:30</span><div class="c-body">
+    <div class="c-name">🌿 Central Park — entrada calle 77</div>
+    <div class="c-desc">A 5 min del hotel. Bethesda Fountain, Bow Bridge y el Mall. 2 horas caminando sin apuro.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">17:30</span><div class="c-body">
+    <div class="c-name">🧁 Magnolia Bakery — banana pudding</div>
+    <div class="c-desc">Sucursal UWS a pasos del parque. El banana pudding original. Icónica multi-locación — referente de cómo escalar una bakery.</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span></div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🌙 Noche tranquila — jet lag day</div>
+  <div class="night-sub">Cenar en el barrio y dormir temprano.</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">20:00</span><div class="c-body">
+      <div class="c-name">🍕 Mama's Too — pizza masa madre</div>
+      <div class="c-desc">3 cuadras del hotel. La mejor pizza del UWS — sin reserva entre semana temprano. Benchmark gourmet/loaded del formato NY slice.</div>
+      <div class="c-tags"><span class="tg pizza">Pizza research</span><span class="tg must">Must</span></div>
+      <div class="c-tip"><strong>Para Respect:</strong> Observar cómo manejan los toppings loaded sobre una base de 18". ¿La masa aguanta? ¿Cómo sirven? Un slice cada uno de distintos sabores.</div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">22:00</span><div class="c-body">
+      <div class="c-name">😴 Volver al hotel</div>
+      <div class="c-desc">Mañana arranca el Midtown. Dormir es parte del itinerario.</div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 2 ===================== -->
+<div class="sec" id="d2">
+<div class="dh">
+  <div class="dh-num">02</div>
+  <div class="dh-title">Midtown · <em>5th Ave · Rockefeller</em></div>
+  <div class="dh-date">Martes 3 de junio · Salida 8:30 del hotel</div>
+  <div class="dh-note">Top of the Rock al sunset (~19:30) — en junio el sol cae a las 20:20. La mejor vista del viaje.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">8:30</span><div class="c-body">
+    <div class="c-name">🍪 Levain Bakery</div>
+    <div class="c-desc">Abren 8am — las cookies de 200g se agotan. Dark chocolate chip walnut. 15 min caminando desde el hotel. Empezaron en el UWS, hoy tienen múltiples locaciones + expansión nacional.</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Para Brown:</strong> Caso de estudio #1 de cookie premium que escala. Una cookie compartida — son enormes.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:30</span><div class="c-body">
+    <div class="c-name">🏙️ Times Square — mejor de mañana</div>
+    <div class="c-desc">Subway 86th St → 42nd St (línea 1). La mitad de gente que de tarde. 30 min máximo.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">10:15</span><div class="c-body">
+    <div class="c-name">🏛️ Grand Central Terminal</div>
+    <div class="c-desc">5 min de Times Square. La bóveda estrellada es una de las más fotografiadas del mundo. Gratis. 20 minutos.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde — compras + mirador</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">11:00</span><div class="c-body">
+    <div class="c-name">👕 Uniqlo 5th Ave — 5 pisos</div>
+    <div class="c-desc">El flagship más grande del mundo. Ediciones USA exclusivas.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time"></span><div class="c-body">
+    <div class="c-name">💄 Sephora 5th Ave</div>
+    <div class="c-desc">Marcas y lanzamientos que no llegan a Chile. En el mismo bloque.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~12:00</span><div class="c-body">
+    <div class="c-name">🍕 NY Pizza Suprema</div>
+    <div class="c-desc">Frente a Penn Station/MSG. Operación de altísimo volumen — display siempre lleno, rotación constante. Ir en horario de rush para ver el flujo de producción.</div>
+    <div class="c-addr">📍 413 8th Ave (frente a Penn Station)</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Ojo operativo:</strong> Observar ciclo de horneado, pies/hora, sistema de display y reheat. Un slice compartido — dejar espacio para Los Tacos.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:00</span><div class="c-body">
+    <div class="c-name">🌮 Los Tacos N°1 — almuerzo</div>
+    <div class="c-desc">Chelsea Market o 8th Ave. Pastor al trompo + suadero, tortilla azul. Fila rápida. Cash preferred.</div>
+    <div class="c-tags"><span class="tg breakfast">Almuerzo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">14:30</span><div class="c-body">
+    <div class="c-name">🏬 Macy's Herald Square</div>
+    <div class="c-desc">11 pisos, el flagship más icónico de América. 1h de exploración.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~16:00</span><div class="c-body">
+    <div class="c-name">🍜 Momofuku Noodle Bar</div>
+    <div class="c-desc">El ramen que cambió la cocina americana. Pedir el de cerdo y los buns de pato. Cena temprana para llegar livianos al sunset.</div>
+    <div class="c-addr">Reservar en Resy — pedir mesa temprana.</div>
+    <div class="c-tags"><span class="tg bar">Cena temprana</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~17:30</span><div class="c-body">
+    <div class="c-name">🍰 Milk Bar — postre</div>
+    <div class="c-desc">Crack pie + cereal milk soft serve. Christina Tosi creó un imperio de bakery con branding fortísimo. Parada rápida de postre antes de subir al Rock.</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span></div>
+    <div class="c-tip"><strong>Para Brown:</strong> Modelo de producto "signature" que se convierte en marca. Crack pie = identidad. ¿Cuál es el producto signature de Brown?</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~19:00</span><div class="c-body">
+    <div class="c-name">🏙️ Top of the Rock — slot sunset</div>
+    <div class="c-desc">Piso 70 Rockefeller Center. En junio el sol cae ~20:20 — el slot de las 19:00 es perfecto para ver la golden hour completa y Manhattan iluminándose. 1h arriba.</div>
+    <div class="c-addr">⚠️ topoftherocknyc.com — slots sunset se agotan rápido. ~$46 USD. Reservar el de las 19:00.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span><span class="tg must">Must</span></div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🍸 Sip & Guzzle · #1 bar de Norteamérica</div>
+  <div class="night-sub">50 Best Bars North America 2026 · Noche corta para descansar</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">~20:30</span><div class="c-body">
+      <div class="c-name">🍸 Sip & Guzzle — #1 Norteamérica 2026</div>
+      <div class="c-desc">West Village. Ir a Sip (planta baja) — cócteles japoneses de precisión. A5 Wagyu burger si hay hambre todavía. Bajar directo del Rock.</div>
+      <div class="c-addr">Reservar en Resy. Planta alta (Guzzle) suele ser walk-in.</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">~22:30</span><div class="c-body">
+      <div class="c-name">😴 Uber al hotel</div>
+      <div class="c-desc">Noche a hora razonable. Mañana es el día más intenso de food research (Downtown).</div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 3 ===================== -->
+<div class="sec" id="d3">
+<div class="dh">
+  <div class="dh-num">03</div>
+  <div class="dh-title">Downtown · <em>9/11 · Chinatown · SoHo</em></div>
+  <div class="dh-date">Miércoles 4 de junio · Lluvia posible · Salida 8:00</div>
+  <div class="dh-note">Plan B con lluvia: galerías SoHo + shopping cubierto. Día con más paradas de food research.</div>
+</div>
+
+<div class="bari">🌧️ Día con lluvia posible — llevar paraguas plegable.</div>
+
+<div class="phase"><span class="dot am"></span>Mañana</div>
+
+<div class="card replaced">
+  <div class="c-row"><span class="c-time">8:30</span><div class="c-body">
+    <div class="c-name">Desayunar en hotel o Liberty Bagels</div>
+    <div class="c-replaced-note">↗ Reemplazado por Russ & Daughters</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~8:00</span><div class="c-body">
+    <div class="c-name">🥯 Russ & Daughters</div>
+    <div class="c-desc">El benchmark absoluto del bagel con lox — más de 100 años de historia. Everything bagel con cream cheese y nova compartido. Queda en Houston St, subway directo a Fulton después.</div>
+    <div class="c-addr">📍 179 E Houston St, Lower East Side</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span><span class="tg must">Must</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:30</span><div class="c-body">
+    <div class="c-name">🕊️ 9/11 Memorial & Museum</div>
+    <div class="c-desc">Reservar slot 9:00–10:00. Los pozos de agua donde estaban las torres — uno de los monumentos más conmovedores del mundo. 2–3h.</div>
+    <div class="c-addr">⚠️ 911memorial.org — $25–36 USD. Reservar ahora.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">12:00</span><div class="c-body">
+    <div class="c-name">○ Oculus + Wall Street + Charging Bull</div>
+    <div class="c-desc">Oculus de Calatrava a 3 min del museo. Wall Street y el Toro a 10 min caminando.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde — Chinatown · Little Italy · SoHo</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">12:30</span><div class="c-body">
+    <div class="c-name">🥟 Jim Mei Dumplings — Chinatown</div>
+    <div class="c-desc">Uber 10 min desde Wall St. 8 dumplings por $2. Pork & chive + sopa wonton. Llevar cash.</div>
+    <div class="c-tags"><span class="tg breakfast">Almuerzo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:15</span><div class="c-body">
+    <div class="c-name">🇮🇹 Little Italy — Ferrara Bakery (1892)</div>
+    <div class="c-desc">2 cuadras de Chinatown. Un cannoli compartido + espresso rápido. Mulberry St todavía auténtica.</div>
+    <div class="c-tags"><span class="tg bakery">Bakery</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">14:00</span><div class="c-body">
+    <div class="c-name">🛍️ SoHo — galerías y compras</div>
+    <div class="c-desc">Broadway y Prince St. Si llueve, mejor — tiendas cubiertas y menos gente. 2 horas de exploración tranquila.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~16:00</span><div class="c-body">
+    <div class="c-name">🧁 Maman</div>
+    <div class="c-desc">Coffee break mid-shopping. Cadena de bakery-cafés con estética francesa, múltiples locaciones y expandiendo. El modelo más parecido a lo que Brown podría ser como marca escalable.</div>
+    <div class="c-addr">📍 239 Centre St (SoHo) o 211 W Broadway (Tribeca)</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Para Brown:</strong> Estudiar display, señalética, mix dulce/salado, merchandising en mostrador, y cómo manejan café + bakery en el mismo counter. Una cookie compartida.</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~16:45</span><div class="c-body">
+    <div class="c-name">🍕 Lucia Pizza SoHo</div>
+    <div class="c-desc">Caso de estudio de negocio: slice shop Brooklyn expandiéndose agresivamente — 5 locaciones, reseña Pete Wells NYT. Family-owned, lineage de los 70s.</div>
+    <div class="c-addr">📍 375 Canal St, SoHo</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Caso de negocio:</strong> Lease de 10 años a $325/sqft en 900 sqft. Estudiar formato, branding, flujo operativo. Un slice cada uno.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~17:30</span><div class="c-body">
+    <div class="c-name">🍕 L'industrie Pizzeria — snack</div>
+    <div class="c-desc">Masa finísima con burrata fresca. Comer de pie y seguir. Artisan slice con ingredientes importados de Italia — la versión premium del slice clásico.</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">18:00</span><div class="c-body">
+    <div class="c-name">🚶 Paseo LES — caminar hacia los bares</div>
+    <div class="c-desc">Caminar de SoHo al Lower East Side por Orchard St / Ludlow St. Explorar las tiendas vintage y el vibe del barrio. Descansar antes de la noche.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🍸 Bar hop: Superbueno → Double Chicken Please</div>
+  <div class="night-sub">Dos de los mejores bares del mundo mismo · Lower East Side</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">19:30</span><div class="c-body">
+      <div class="c-name">🍹 Superbueno — #9 Norteamérica 2026</div>
+      <div class="c-desc">Bar mexicano-americano. Margarita negra con huitlacoche + mole. Música latina, neón. Para Pablo: goldmine de ideas de coctelería.</div>
+      <div class="c-addr">Walk-in. Llegar temprano para asegurar barra. 1st Ave.</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">21:30</span><div class="c-body">
+      <div class="c-name">🐔 Double Chicken Please — The Coop</div>
+      <div class="c-desc">Los cócteles más creativos de NYC — comidas deconstruidas en trago. Cold Pizza, Ramen, Sushi. Reservar sala trasera (The Coop).</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 4 ===================== -->
+<div class="sec" id="d4">
+<div class="dh">
+  <div class="dh-num">04</div>
+  <div class="dh-title">Brooklyn · <em>DUMBO · Williamsburg</em></div>
+  <div class="dh-date">Jueves 5 de junio · Salida 8:15</div>
+  <div class="dh-note">Cruzar el Brooklyn Bridge a pie — la foto más icónica del viaje.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~8:15</span><div class="c-body">
+    <div class="c-name">🥯 Zabar's</div>
+    <div class="c-desc">Institución del UWS. Deli counter legendario — bagel con sturgeon o whitefish salad para el camino. Como gastronómico vale ver la operación: producto, display, pricing, rotación.</div>
+    <div class="c-addr">📍 2245 Broadway (& 80th St) — cerca del hotel</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:00</span><div class="c-body">
+    <div class="c-name">🚇 Subway 4/5/6 → Brooklyn Bridge–City Hall (~20 min)</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:45</span><div class="c-body">
+    <div class="c-name">🌉 Brooklyn Bridge — cruzar a pie</div>
+    <div class="c-desc">De Manhattan a Brooklyn. Carril peatonal arriba. 30–40 min. Vista insuperable al llegar. De mañana hay menos ciclistas.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">10:30</span><div class="c-body">
+    <div class="c-name">📷 DUMBO — Washington Street</div>
+    <div class="c-desc">La foto entre los dos pilares del puente con Manhattan al fondo. La imagen más compartida de NYC.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">12:00</span><div class="c-body">
+    <div class="c-name">🍕 Grimaldi's Pizzeria</div>
+    <div class="c-desc">Horno a leña bajo el puente. Margherita con mozzarella fresca. Llegar antes de las 12h. Walk-in, fila ~20 min.</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span></div>
+    <div class="c-tip"><strong>Coal-oven benchmark:</strong> Observar el horno, las temperaturas, la velocidad de cocción. Comparar con lo que hará el PizzaMaster eléctrico de Respect. Una margherita compartida.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:30</span><div class="c-body">
+    <div class="c-name">🧳 Brooklyn Flea Market</div>
+    <div class="c-desc">Vintage, diseño local, food vendors. Para Pablo: conceptos gastronómicos para traer ideas. Ver brooklynflea.com para horario de jueves.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:00</span><div class="c-body">
+    <div class="c-name">🌿 Williamsburg — pasear</div>
+    <div class="c-desc">10 min en Uber desde DUMBO. Murales, tiendas independientes, la escena gastronómica más interesante de NYC fuera de Manhattan.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~15:30</span><div class="c-body">
+    <div class="c-name">☕ Devoción</div>
+    <div class="c-desc">Café colombiano con granos que llegan días después de la cosecha, tostados on-site. Local con pared viva de plantas — como concepto de espacio gastronómico y diseño de experiencia es espectacular.</div>
+    <div class="c-addr">📍 69 Grand St, Williamsburg</div>
+    <div class="c-tags"><span class="tg bakery">Concepto espacio</span></div>
+    <div class="c-tip"><strong>Concepto de espacio:</strong> No es por el café — es por cómo diseñaron el local y la experiencia. Relevante para cualquier nuevo concepto de Cheddars Group.</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~16:00</span><div class="c-body">
+    <div class="c-name">🍪 Chip City</div>
+    <div class="c-desc">Cadena de cookies premium con sabores rotativos, modelo simple y escalable. Competidor directo de Levain con approach más fun y accesible.</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span></div>
+    <div class="c-tip"><strong>vs Levain:</strong> Comparar tamaño, textura, pricing, branding, rotación de sabores. Una cookie compartida.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">16:30</span><div class="c-body">
+    <div class="c-name">🍦 Ample Hills Creamery</div>
+    <div class="c-desc">Helado artesanal Brooklyn. Sabores únicos: Ooey Gooey Butter Cake, The Munchies.</div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🦪 Maison Premiere — ostras y cócteles Belle Époque</div>
+  <div class="night-sub">Williamsburg · Top 40 Norteamérica · Reservar en Resy</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">18:30</span><div class="c-body">
+      <div class="c-name">🦪 Maison Premiere</div>
+      <div class="c-desc">Terraza exterior en junio. Ostras $3–5 c/u + cócteles de absinthe. Uno de los lugares más bellos de NYC. Llegar temprano para terraza.</div>
+      <div class="c-tags"><span class="tg bar">Cena + Bar</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">21:00</span><div class="c-body">
+      <div class="c-name">🚕 Uber de regreso — UWS (~35–45 min / $35–45)</div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 5 ===================== -->
+<div class="sec" id="d5">
+<div class="dh">
+  <div class="dh-num">05</div>
+  <div class="dh-title">High Line · <em>Meatpacking · Chelsea</em></div>
+  <div class="dh-date">Viernes 6 de junio · Noche de electrónica 🎧</div>
+  <div class="dh-note">Esta noche es LA noche de electrónica. Guardar energía en la tarde.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:30</span><div class="c-body">
+    <div class="c-name">☕ Sunday Morning Café — desayuno</div>
+    <div class="c-desc">Café de autor camino al High Line. Café de filtro y algo dulce.</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">10:30</span><div class="c-body">
+    <div class="c-name">🌿 The High Line — de sur a norte</div>
+    <div class="c-desc">Entrar por Gansevoort St — caminar hasta 34th St. 2.3km de parque elevado, arte urbano y vistas al Hudson. Con 26°C, perfecto.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde — compras + almuerzo</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">12:00</span><div class="c-body">
+    <div class="c-name">👟 Stussy NYC Flagship</div>
+    <div class="c-desc">Meatpacking. Drops USA exclusivos.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time"></span><div class="c-body">
+    <div class="c-name">🧘 Alo Yoga Store</div>
+    <div class="c-desc">Flagship Chelsea. Activewear premium a precios USA.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time"></span><div class="c-body">
+    <div class="c-name">🧢 Figs + Ernestudio</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card replaced">
+  <div class="c-row"><span class="c-time">14:00</span><div class="c-body">
+    <div class="c-name">Los Tacos N°1 — almuerzo (repetido del Day 2)</div>
+    <div class="c-replaced-note">↗ Reemplazado por Prince Street Pizza</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~14:00</span><div class="c-body">
+    <div class="c-name">🍕 Prince Street Pizza</div>
+    <div class="c-desc">El pepperoni square icónico — Sicilian-style con pepperoni cups que se llenan de grasa. No es tu formato de 18" pero es imperdible. La fila es larga pero vale la pena.</div>
+    <div class="c-addr">📍 27 Prince St, Nolita · ~15 min en subway desde Chelsea</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Tip:</strong> Pedir el Spicy Spring (pepperoni square) — un slice compartido. Observar la operación del square slice vs round: preparación en bandeja, corte, display, pricing.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:30</span><div class="c-body">
+    <div class="c-name">🏗️ Hudson Yards — The Vessel</div>
+    <div class="c-desc">2,500 escaleras interconectadas — subir gratis para vista del Hudson. El barrio más nuevo de Manhattan.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">17:00</span><div class="c-body">
+    <div class="c-name">🏨 Volver al hotel — 2h de descanso</div>
+    <div class="c-desc">Ducharse, preparar outfit (smart casual, no deportivo). Cenar algo liviano antes del club.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">20:00</span><div class="c-body">
+    <div class="c-name">🍽️ Cena — Kast Delicatessen</div>
+    <div class="c-desc">Cenar liviano antes del club.</div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🎧 Marquee Skydeck at Edge — 300m sobre NYC</div>
+  <div class="night-sub">Hudson Yards · La única noche de club · Reservar online</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">22:30</span><div class="c-body">
+      <div class="c-name">🚕 Uber a Hudson Yards (~$20 / 15 min)</div>
+      <div class="c-desc">Llegar a las 23h cuando ya tiene ambiente.</div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">23:00</span><div class="c-body">
+      <div class="c-name">🎧 Marquee Skydeck — electrónica 300m sobre Manhattan</div>
+      <div class="c-desc">El nightclub más alto del mundo. House y electrónica con DJs internacionales. El skyline completo iluminado mientras bailan.</div>
+      <div class="c-addr">Ticket en edgenyc.com. Revisar DJ del viernes 6.</div>
+      <div class="c-tags"><span class="tg bar">La Noche</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">2:30</span><div class="c-body">
+      <div class="c-name">🚕 Uber de regreso (~$30–40)</div>
+      <div class="c-desc">Reservar antes de salir del club — precios suben de noche.</div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 6 ===================== -->
+<div class="sec" id="d6">
+<div class="dh">
+  <div class="dh-num">06</div>
+  <div class="dh-title">Estatua de la <em>Libertad</em></div>
+  <div class="dh-date">Sábado 7 de junio · Post-club · Salida 10:00</div>
+  <div class="dh-note">Post-noche de club — salida más tarde. Ferry de las 11am.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana (tranquila)</div>
+
+<div class="card replaced">
+  <div class="c-row"><span class="c-time">10:00</span><div class="c-body">
+    <div class="c-name">Desayuno tranquilo — hotel o Apollo Bagels</div>
+    <div class="c-replaced-note">↗ Reemplazado por Orwasher's Bakery</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~9:45</span><div class="c-body">
+    <div class="c-name">🥐 Orwasher's Bakery</div>
+    <div class="c-desc">Bakery del UWS con más de 100 años. Bagels de sourdough steam-baked — approach completamente distinto al boiled clásico. Croissants y pastelería excelente. La base sourdough conecta con el mundo de masa fermentada.</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span><span class="tg bakery">Bakery</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">10:45</span><div class="c-body">
+    <div class="c-name">🚇 Línea 1 → South Ferry (~30 min)</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">11:00</span><div class="c-body">
+    <div class="c-name">🗽 Ferry + Estatua de la Libertad</div>
+    <div class="c-desc">Ferry 20 min desde Battery Park. Liberty Island: estatua, museo de la base, vistas a Manhattan.</div>
+    <div class="c-addr">⚠️ statuecruises.com — único sitio oficial. Pedestal agotado pronto en verano. ~$25 ferry básico.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:00</span><div class="c-body">
+    <div class="c-name">🏛️ Ellis Island — incluido en el ticket</div>
+    <div class="c-desc">El museo de la inmigración americana. Uno de los más emocionantes de NYC. 1.5h.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:30</span><div class="c-body">
+    <div class="c-name">🍕 Joe's Pizza — slice clásico</div>
+    <div class="c-desc">Joe's Pizza desde 1975. La referencia absoluta de pizza en NY. Margherita, de pie en la calle.</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Benchmark #1 para Respect:</strong> Cómo estiran (¿mano, rodillo?), temperaturas del horno, tiempo de horneado, display, método de reheat, pricing slice vs pie, pies/hora, tamaño del equipo. Este es TU formato de 18".</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">16:30</span><div class="c-body">
+    <div class="c-name">🌊 Battery Park — paseo costero</div>
+    <div class="c-desc">Vista a la Estatua desde tierra. Buena foto de cierre del día.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🌙 Noche tranquila — recuperación post-viernes</div>
+  <div class="night-sub">Cenar en el barrio. Mañana: The Met.</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">19:30</span><div class="c-body">
+      <div class="c-name">🍣 Idachi — japonesa moderna UWS</div>
+      <div class="c-desc">Cerca del hotel. Japonesa de autor — buena propuesta sin ir lejos. Reservar en Resy.</div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 7 ===================== -->
+<div class="sec" id="d7">
+<div class="dh">
+  <div class="dh-num">07</div>
+  <div class="dh-title">The Met · <em>SoHo · Attaboy</em></div>
+  <div class="dh-date">Domingo 8 de junio · Salida 9:30</div>
+  <div class="dh-note">Llegar al Met antes del mediodía — los domingos se llena de turistas después.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:30</span><div class="c-body">
+    <div class="c-name">☕ Café Sabarsky — desayuno vienés</div>
+    <div class="c-desc">Neue Galerie, frente al Met. Strudel de manzana + café vienés. El desayuno más elegante del Upper East Side.</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">10:30</span><div class="c-body">
+    <div class="c-name">🏛️ The Metropolitan Museum of Art</div>
+    <div class="c-desc">5,000 años de arte. Imprescindibles: templo de Dendur, armaduras medievales, impresionistas. 2–3h.</div>
+    <div class="c-addr">~$30 USD. Llegar antes del mediodía.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:30</span><div class="c-body">
+    <div class="c-name">🥯 Liberty Bagels — almuerzo rápido</div>
+    <div class="c-tags"><span class="tg breakfast">Almuerzo</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~14:30</span><div class="c-body">
+    <div class="c-name">🥐 Dominique Ansel Bakery</div>
+    <div class="c-desc">World's Best Pastry Chef. Cronut, DKA, cookie shots. Su modelo de innovación constante con sabores rotativos mensuales es un approach de marketing directo para Brown.</div>
+    <div class="c-addr">📍 189 Spring St, SoHo</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Para Brown:</strong> El modelo "producto estrella rotativo" (Cronut mensual) genera FOMO y visitas recurrentes. Aplicable a cookie del mes o producto limitado. Un DKA compartido.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:00</span><div class="c-body">
+    <div class="c-name">🍦 Museum of Ice Cream — SoHo</div>
+    <div class="c-desc">558 Broadway. 12 instalaciones + helado ilimitado + sprinkle pool. 1.5h.</div>
+    <div class="c-addr">museumoficecream.com — $25–33 USD.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~16:30</span><div class="c-body">
+    <div class="c-name">🍕 Sal & Carmine's</div>
+    <div class="c-desc">UWS desde 1959. Thin crust, flat, fold-in-half — el NY slice old school puro. Sin pretensiones. El baseline contra el cual medir todo lo demás. Cerca del hotel, al volver.</div>
+    <div class="c-addr">📍 2671 Broadway (& 102nd St), UWS</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span></div>
+    <div class="c-tip"><strong>Comparar con Joe's:</strong> Ambos son NY slice clásico pero con approaches distintos. ¿Cuál te gusta más como referencia para Respect? Un slice compartido.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">17:00</span><div class="c-body">
+    <div class="c-name">🛍️ SoHo — último recorrido de compras</div>
+    <div class="c-desc">Domingo en SoHo tiene el mejor ambiente. Lo que quedó pendiente.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🍸 Attaboy — speakeasy sin carta</div>
+  <div class="night-sub">#37 Norteamérica · Walk-in · El cóctel que te crean es el mejor del viaje</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">18:30</span><div class="c-body">
+      <div class="c-name">🍽️ Cena previa — Lafayette Bakery o LES</div>
+      <div class="c-desc">Lafayette Bakery en NoHo tiene pasteles de autor. O explorar el LES.</div>
+      <div class="c-tags"><span class="tg bakery">Bakery</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">20:30</span><div class="c-body">
+      <div class="c-name">🍸 Attaboy — 134 Eldridge St</div>
+      <div class="c-desc">Puerta sin letrero — esperar afuera. Decirle al bartender qué espirituosos les gusta y qué sabores quieren. El cóctel resultante: el mejor del viaje.</div>
+      <div class="c-addr">Walk-in. No reservas. Llegar a las 20:30 para evitar fila larga.</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 8 ===================== -->
+<div class="sec" id="d8">
+<div class="dh">
+  <div class="dh-num">08</div>
+  <div class="dh-title">Summit One Vanderbilt · <em>Koreatown</em></div>
+  <div class="dh-date">Lunes 9 de junio · Salida 9:00</div>
+  <div class="dh-note">Summit slot 18:30h — la luz de NYC cambiando de color desde las alturas.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana</div>
+
+<div class="card replaced">
+  <div class="c-row"><span class="c-time">9:30</span><div class="c-body">
+    <div class="c-name">Bryant Park — café al aire libre (genérico)</div>
+    <div class="c-replaced-note">↗ Reemplazado por Breads Bakery</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~9:15</span><div class="c-body">
+    <div class="c-name">🥐 Breads Bakery</div>
+    <div class="c-desc">Bakery israelí con el mejor babka de NYC, sándwiches y pan artesanal. Modelo multi-locación con identidad cultural clara — nicho étnico premium escalado. Luego caminar a Bryant Park.</div>
+    <div class="c-addr">📍 18 E 16th St (Union Square) o 1890 Broadway</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span><span class="tg bakery">Bakery benchmark</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~11:15</span><div class="c-body">
+    <div class="c-name">🍕 Lucia Pizza Gramercy</div>
+    <div class="c-desc">Segunda visita para test de consistencia entre locaciones. Si están escalando bien, la calidad debería ser idéntica a SoHo (Day 3).</div>
+    <div class="c-addr">📍 282 Third Ave, Gramercy</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span></div>
+    <div class="c-tip"><strong>Test de consistencia:</strong> Mismo slice que en SoHo. ¿Misma masa, mismo sabor? Si sí, la operación centralizada funciona. Si no, hay gap de QA. Un slice compartido.</div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde — compras + mirador</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">12:00</span><div class="c-body">
+    <div class="c-name">🇰🇷 Koreatown — 32nd Street</div>
+    <div class="c-desc">Skincare coreano (Innisfree, Olive Young, COSRX) a precio de Corea. Para Pablo: BBQ coreano — concepto a estudiar para Chile.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:30</span><div class="c-body">
+    <div class="c-name">🍔 7 Street Burger — almuerzo</div>
+    <div class="c-desc">Smash burger clásico con queso americano y pickles. Precio accesible para NYC.</div>
+    <div class="c-tags"><span class="tg burger">Burger research</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:00</span><div class="c-body">
+    <div class="c-name">🏪 Chelsea Market — con ojos de operador</div>
+    <div class="c-desc">Antigua fábrica de Oreo convertida en mercado gourmet. Docenas de propuestas gastronómicas innovadoras.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+    <div class="c-tip"><strong>No como turista:</strong> Estudiar cómo los vendors manejan el flujo, formatos de mostrador, señalética, pricing visible, packaging, rotación de producto. Es WCI en un solo espacio. 1.5-2h mínimo con intención.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">18:30</span><div class="c-body">
+    <div class="c-name">🏙️ Summit One Vanderbilt — slot sunset</div>
+    <div class="c-desc">Arte inmersivo en espejos, plataformas de vidrio a 320m, bar Après piso 93. El slot 18:30–20h es el más impresionante.</div>
+    <div class="c-addr">⚠️ summitov.com — ~$44–60 USD. Cerrado martes.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🍸 Dante + 230 Fifth Rooftop</div>
+  <div class="night-sub">El mejor Negroni de NYC + vistas al Empire State iluminado</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">~20:15</span><div class="c-body">
+      <div class="c-name">🍊 Caffe Dante — Best Bar del Mundo 2019</div>
+      <div class="c-desc">Greenwich Village. Terraza en junio. El Garibaldi (Campari + naranja exprimida) y el Negroni son de los mejores del mundo. Bajar directo del Summit.</div>
+      <div class="c-addr">Walk-in. Llegar a las 20:30 para terraza.</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">~21:30</span><div class="c-body">
+      <div class="c-name">🏙️ 230 Fifth Rooftop — Empire State de noche</div>
+      <div class="c-desc">Sin reserva, sin cover. Vista directa al Empire State iluminado. Drinks ~$18 USD.</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 9 ===================== -->
+<div class="sec" id="d9">
+<div class="dh">
+  <div class="dh-num">09</div>
+  <div class="dh-title">Harlem · <em>Últimas compras · Employees Only</em></div>
+  <div class="dh-date">Martes 10 de junio · Salida 9:30</div>
+  <div class="dh-note">Última noche real — Employees Only cierra el viaje como se merece.</div>
+</div>
+
+<div class="phase"><span class="dot am"></span>Mañana — Harlem</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:30</span><div class="c-body">
+    <div class="c-name">🚇 Línea 2/3 → 125th St (~10 min)</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">10:00</span><div class="c-body">
+    <div class="c-name">🎵 Harlem — 125th Street</div>
+    <div class="c-desc">Apollo Theater, Studio Museum, murales de jazz. La energía de Harlem es completamente diferente a Manhattan.</div>
+    <div class="c-tags"><span class="tg sight">Paseo</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">11:30</span><div class="c-body">
+    <div class="c-name">🍗 Sylvia's — brunch soul food</div>
+    <div class="c-desc">Desde 1962. Fried chicken, waffles, mac & cheese. Una experiencia cultural, no solo gastronómica. Ir con hambre — este ES el desayuno del día.</div>
+    <div class="c-tags"><span class="tg breakfast">Brunch</span><span class="tg must">Must</span></div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Tarde — últimas compras</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">13:30</span><div class="c-body">
+    <div class="c-name">👕 Zara 5th Ave + pendientes</div>
+    <div class="c-desc">Colecciones USA. CVS/Walgreens para suplementos y beauty. Último recorrido.</div>
+    <div class="c-tags"><span class="tg shop">Compras</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~14:30</span><div class="c-body">
+    <div class="c-name">🧁 Veniero's Pasticceria (1894)</div>
+    <div class="c-desc">Pastelería italiana de 130+ años. El cheesecake más legendario de NYC. Cannoli, rainbow cookies. Hay lecciones de longevidad de marca que ningún MBA te enseña.</div>
+    <div class="c-addr">📍 342 E 11th St, East Village</div>
+    <div class="c-tags"><span class="tg bakery">Bakery benchmark</span></div>
+    <div class="c-tip"><strong>130 años de marca:</strong> ¿Qué hace que sobreviva? Producto consistente, identidad clara, cero pretensión de ser trendy. Un cheesecake slice + un cannoli compartidos.</div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">15:30</span><div class="c-body">
+    <div class="c-name">🧁 Lafayette Bakery — última merienda</div>
+    <div class="c-desc">Pasteles de autor en NoHo. La última merienda dulce antes de volver.</div>
+    <div class="c-tags"><span class="tg bakery">Bakery</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">17:00</span><div class="c-body">
+    <div class="c-name">🏨 Hotel — organizar maletas</div>
+    <div class="c-desc">Tarde para organizar las compras y descansar antes de la última noche.</div>
+  </div></div>
+</div>
+
+<div class="night-block">
+  <div class="night-title">🍸 Employees Only — el cierre perfecto</div>
+  <div class="night-sub">#45 Norteamérica · Tarot reader · Live music · Cocina hasta las 3:30am</div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">18:30</span><div class="c-body">
+      <div class="c-name">🥩 Cena — Crane Club (NYT Top 100)</div>
+      <div class="c-desc">Parrilla Mibrasa, dry-aged steaks, burger de wagyu (solo 17:30–18h). O explorar Grove St.</div>
+      <div class="c-addr">Reservar en Resy. West Village.</div>
+      <div class="c-tags"><span class="tg burger">Burger</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">20:30</span><div class="c-body">
+      <div class="c-name">🍸 Employees Only — 510 Hudson St</div>
+      <div class="c-desc">Tarot reader en la entrada — pasar su filtro. Live music toda la noche, coctelería clásica perfecta, cocina hasta las 3:30am. La última copa de NYC, en el lugar correcto. Llegar temprano para disfrutar sin apuro.</div>
+      <div class="c-addr">Reservar con anticipación. Llegar puntual.</div>
+      <div class="c-tags"><span class="tg bar">Bar</span></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="c-row"><span class="c-time">~23:00</span><div class="c-body">
+      <div class="c-name">🚕 Último Uber al hotel</div>
+      <div class="c-desc">Mañana es el último día — descansar para la ruta final de research.</div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DÍA 10 ===================== -->
+<div class="sec" id="d10">
+<div class="dh">
+  <div class="dh-num">10</div>
+  <div class="dh-title">Salida · <em>Ruta final de research</em></div>
+  <div class="dh-date">Miércoles 11 de junio · Vuelo JFK 19:50</div>
+  <div class="dh-note">No desperdiciar este día. Checkout 9:00, vuelo 19:50 — hay 7 horas para la última ronda.</div>
+</div>
+
+<div class="bari">
+  <strong>Timing crítico:</strong> Checkout 9:00, dejan maletas en el hotel (The Belleclaire guarda equipaje). Ruta de research 10:00–14:00. Uber a JFK a las 16:00 máximo (llegar ~17:00–17:30, 2h+ antes del vuelo). El tráfico de miércoles tarde a JFK puede ser impredecible — no cortar más tarde.
+</div>
+
+<div class="phase"><span class="dot am"></span>Despedida</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">7:30</span><div class="c-body">
+    <div class="c-name">🥯 Último bagel de Nueva York</div>
+    <div class="c-desc">El mismo ritual que el primer día — cerrar el círculo caminando por el UWS por última vez.</div>
+    <div class="c-tags"><span class="tg breakfast">Desayuno</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">9:00</span><div class="c-body">
+    <div class="c-name">🏨 Check-out</div>
+    <div class="c-desc">El hotel guarda maletas. Último paseo por el barrio.</div>
+  </div></div>
+</div>
+
+<div class="phase"><span class="dot pm"></span>Ruta final de pizza research</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~10:30</span><div class="c-body">
+    <div class="c-name">🍕 Scarr's Pizza</div>
+    <div class="c-desc">NY slice con harina molida in-house. El approach artesanal al formato de 18" — masa ligera, crujiente, con sabor de harina que no encuentras en otro slice shop. Muestra hasta dónde puedes llevar el producto sin salirte del concepto.</div>
+    <div class="c-addr">📍 35 Orchard St, Lower East Side</div>
+    <div class="c-tags"><span class="tg pizza">Pizza research</span><span class="tg must">Must</span></div>
+    <div class="c-tip"><strong>Para Respect:</strong> ¿Vale la pena moler tu propia harina o es un diferenciador que el cliente no percibe? Scarr's cobra más y la gente paga. Un slice compartido.</div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~11:30</span><div class="c-body">
+    <div class="c-name">🍕 Prince Street (si no fueron Day 5)</div>
+    <div class="c-desc">Backup. El pepperoni square. 10 min caminando desde Scarr's.</div>
+    <div class="c-addr">📍 27 Prince St, Nolita</div>
+    <div class="c-tags"><span class="tg pizza">Pizza</span></div>
+  </div></div>
+</div>
+
+<div class="card new">
+  <div class="c-row"><span class="c-time">~12:30</span><div class="c-body">
+    <div class="c-name">⭐ Favorito del viaje — repetir</div>
+    <div class="c-desc">Después de 9 días van a tener claro cuál fue el mejor spot. Usen este slot para volver: Joe's, Levain, Mama's Too, lo que haya sido el highlight. El último bocado de NYC debería ser el mejor.</div>
+    <div class="c-tags"><span class="tg pizza">Pizza</span><span class="tg bakery">Bakery</span></div>
+  </div></div>
+</div>
+
+<div class="card">
+  <div class="c-row"><span class="c-time">~14:00</span><div class="c-body">
+    <div class="c-name">🍽️ Almuerzo light</div>
+    <div class="c-desc">Algo liviano en el barrio antes de ir al aeropuerto.</div>
+  </div></div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--logistic)">
+  <div class="c-row"><span class="c-time">~16:00</span><div class="c-body">
+    <div class="c-name">✈️ Traslado al aeropuerto</div>
+    <div class="c-desc"><strong>JFK:</strong> Uber ~50–60 min / $55–70. O AirTrain + subway ~$9. <strong>Salir 3h antes.</strong> No negociable con el tráfico de miércoles tarde.</div>
+    <div class="c-tags"><span class="tg" style="background:#EFF6FF;color:var(--logistic)">Logística</span></div>
+  </div></div>
+</div>
+</div>
+
+</div>
+
+<script>
+function go(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.target.classList.add('on');
+  window.scrollTo({top:document.querySelector('.ct').offsetTop-50,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
