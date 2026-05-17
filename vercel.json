@@ -1,5 +1,6 @@
 {
-  "buildCommand": "",
-  "outputDirectory": "public",
-  "framework": null
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/", "destination": "/nyc-completo-dani-pablo.html" }
+  ]
 }
