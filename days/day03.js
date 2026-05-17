@@ -199,8 +199,8 @@ export default {
         },
         {
           "time": "18:00",
-          "name": "🚶 Paseo LES — caminar hacia los bares",
-          "desc": "Caminar de SoHo al Lower East Side por Orchard St / Ludlow St. Explorar las tiendas vintage y el vibe del barrio. Descansar antes de la noche.",
+          "name": "🚶 Paseo LES — caminar hacia el bar",
+          "desc": "Caminar de SoHo al Lower East Side por Orchard St / Ludlow St. Explorar las tiendas vintage y el vibe del barrio.",
           "addr": null,
           "tags": [
             {
@@ -219,14 +219,26 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🍸 Bar hop: Superbueno → Double Chicken Please",
-      "nightSub": "Dos de los mejores bares del mundo mismo · Lower East Side",
+      "nightTitle": "🐔 Double Chicken Please — cócteles que son comidas",
+      "nightSub": "LES · Los cócteles más creativos de NYC · Reservar The Coop",
       "events": [
         {
-          "time": "19:30",
-          "name": "🍹 Superbueno — #9 Norteamérica 2026",
-          "desc": "Bar mexicano-americano. Margarita negra con huitlacoche + mole. Música latina, neón. Para Pablo: goldmine de ideas de coctelería.",
-          "addr": "Walk-in. Llegar temprano para asegurar barra. 1st Ave.",
+          "time": "~19:30",
+          "name": "🍽️ Cenar algo en el LES",
+          "desc": "El barrio tiene opciones infinitas. Algo liviano antes de los cócteles — tacos, dumplings, lo que aparezca caminando.",
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~20:30",
+          "name": "🐔 Double Chicken Please — The Coop",
+          "desc": "Los cócteles más creativos de NYC — comidas deconstruidas en trago. Cold Pizza, Ramen, Sushi. Sin apuro esta noche — disfrutar la experiencia completa. Reservar sala trasera (The Coop).",
+          "addr": null,
           "tags": [
             {
               "key": "bar",
@@ -240,16 +252,11 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "21:30",
-          "name": "🐔 Double Chicken Please — The Coop",
-          "desc": "Los cócteles más creativos de NYC — comidas deconstruidas en trago. Cold Pizza, Ramen, Sushi. Reservar sala trasera (The Coop).",
+          "time": "~22:30",
+          "name": "😴 Uber al hotel",
+          "desc": "Mañana es Brooklyn — cruzar el puente a pie temprano.",
           "addr": null,
-          "tags": [
-            {
-              "key": "bar",
-              "label": "Bar"
-            }
-          ],
+          "tags": [],
           "tip": null,
           "isNew": false,
           "isReplaced": false,
