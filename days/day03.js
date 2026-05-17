@@ -101,6 +101,25 @@ export default {
           "isLogistic": false
         },
         {
+          "time": "~13:00",
+          "name": "🧊 Mixue — la cadena más grande del mundo",
+          "desc": "50,000+ locaciones globales, soft serve desde $1.19. La mega-cadena china que está conquistando NYC. Parada de 5 minutos — probar el producto y ver cómo opera la escala extrema.",
+          "addr": "📍 Chinatown, Canal St area",
+          "tags": [
+            {
+              "key": "sight",
+              "label": "Concepto"
+            }
+          ],
+          "tip": {
+            "html": "<strong>Para escala:</strong> ¿Cómo opera una cadena de 50K locaciones? Menú mínimo, proceso ultra-estandarizado, pricing agresivo, branding simple. El anti-artesanal que funciona a escala planetaria."
+          },
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
           "time": "13:15",
           "name": "🇮🇹 Little Italy — Ferrara Bakery (1892)",
           "desc": "2 cuadras de Chinatown. Un cannoli compartido + espresso rápido. Mulberry St todavía auténtica.",

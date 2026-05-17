@@ -3,7 +3,7 @@ export default {
   "number": "09",
   "title": "Harlem · <em>Últimas compras · Employees Only</em>",
   "date": "Martes 10 de junio · Salida 9:30",
-  "note": "Última noche real — Employees Only cierra el viaje como se merece.",
+  "note": "Última noche real — Employees Only cierra el viaje como se merece. Día intencionalmente liviano: buffer para repetir favoritos o lo que haya quedado pendiente.",
   "alert": null,
   "phases": [
     {
@@ -64,8 +64,27 @@ export default {
     },
     {
       "type": "pm",
-      "label": "Tarde — últimas compras",
+      "label": "Tarde — buffer + últimas compras",
       "events": [
+        {
+          "time": "~13:00",
+          "name": "🍗 Poulette Rotisserie — observar el formato tendencia 2026",
+          "desc": "Rotisserie chicken estilo París — el formato que está explotando en NYC este año. Queda cerca del hotel en Amsterdam Ave. No es para comer necesariamente (vienen de Sylvia's), pero pasar a ver cómo opera: pollo entero + frites, menú mínimo, formato simple y escalable.",
+          "addr": "📍 Amsterdam Ave & 88th St, UWS — camino de vuelta de Harlem",
+          "tags": [
+            {
+              "key": "sight",
+              "label": "Tendencia"
+            }
+          ],
+          "tip": {
+            "html": "<strong>Tendencia 2026:</strong> Con los precios de carne subiendo, rotisserie chicken es el formato del momento. Observar operación, pricing, presentación, flujo. ¿Tiene sentido para Chile?"
+          },
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
         {
           "time": "13:30",
           "name": "👕 Zara 5th Ave + pendientes",

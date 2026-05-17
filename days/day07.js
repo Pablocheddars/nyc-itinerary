@@ -135,17 +135,24 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🍸 Attaboy — speakeasy sin carta",
-      "nightSub": "#37 Norteamérica · Walk-in · El cóctel que te crean es el mejor del viaje",
+      "nightTitle": "🥩 Katz's Deli → 🍸 Attaboy",
+      "nightSub": "El pastrami más icónico de América + el speakeasy sin carta · LES",
       "events": [
         {
           "time": "~18:30",
-          "name": "🍽️ Cena en el LES",
-          "desc": "Caminar de SoHo al Lower East Side. El barrio tiene opciones infinitas — tacos, dumplings, noodles, lo que encuentren caminando. Algo liviano antes de los cócteles.",
-          "addr": null,
-          "tags": [],
-          "tip": null,
-          "isNew": false,
+          "name": "🥩 Katz's Delicatessen — pastrami desde 1888",
+          "desc": "El deli más icónico de América. Pastrami sandwich cortado a mano, mostaza, pan de centeno. $30+ el sandwich pero es legendario. Escena de 'When Harry Met Sally'. A 1 cuadra de Attaboy.",
+          "addr": "📍 205 E Houston St, Lower East Side",
+          "tags": [
+            {
+              "key": "must",
+              "label": "Must"
+            }
+          ],
+          "tip": {
+            "html": "<strong>Caso de estudio operativo:</strong> 138 años con el mismo producto. Sistema de tickets en el counter, carving a la vista, manejo de filas de 200+ personas con flujo constante, pricing premium que el mercado acepta. Compartir un pastrami sandwich."
+          },
+          "isNew": true,
           "isReplaced": false,
           "replacedNote": null,
           "isLogistic": false
