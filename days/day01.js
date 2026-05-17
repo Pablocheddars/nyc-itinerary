@@ -2,7 +2,7 @@ export default {
   "id": "d1",
   "number": "01",
   "title": "Llegada & <em>Upper West Side</em>",
-  "date": "Lunes 2 de junio · Llegada JFK 09:40",
+  "date": "Martes 2 de junio · Llegada JFK 09:40",
   "note": "Día suave. El jet lag Santiago→NYC es de 4 horas — no planificar demasiado.",
   "alert": null,
   "phases": [
