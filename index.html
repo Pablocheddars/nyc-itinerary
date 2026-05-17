@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NYC Junio 2026 — Dani & Pablo</title>
+<title>NYC Junio 2026 \u2014 Dani & Pablo</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
@@ -112,11 +112,37 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 .ck-link{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--sight);margin-top:.3rem;text-decoration:none}
 .ck-link:hover{text-decoration:underline}
 
+/* WISHLIST */
+.wl-form{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem;margin-bottom:1.5rem}
+.wl-form-row{display:flex;gap:.5rem;margin-bottom:.5rem}
+.wl-form-row:last-child{margin-bottom:0}
+.wl-input{font-family:'DM Sans',sans-serif;font-size:.85rem;padding:.5rem .75rem;border:1px solid var(--border);border-radius:4px;background:var(--bg);color:var(--txt);outline:none;flex:1}
+.wl-input:focus{border-color:var(--pizza)}
+.wl-input-wide{flex:2}
+.wl-select{font-family:'DM Sans',sans-serif;font-size:.8rem;padding:.5rem .5rem;border:1px solid var(--border);border-radius:4px;background:var(--bg);color:var(--txt);outline:none;min-width:130px}
+.wl-btn{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.05em;padding:.5rem 1rem;background:var(--pizza);color:#fff;border:none;border-radius:4px;cursor:pointer;white-space:nowrap;font-weight:600;transition:opacity .2s}
+.wl-btn:hover{opacity:.85}
+.wl-count{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);margin-bottom:1rem}
+.wl-empty{font-size:.85rem;color:var(--muted);font-style:italic;padding:2rem 0;text-align:center}
+.wl-group{margin-bottom:1.5rem}
+.wl-item{display:flex;gap:.75rem;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:.85rem 1rem;margin-bottom:.5rem;transition:all .2s}
+.wl-item:hover{box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.wl-item.done{opacity:.55;border-left:3px solid #4D7C0F}
+.wl-item.done .ck-name{text-decoration:line-through}
+.wl-check{font-size:1.1rem;line-height:1;padding-top:.1rem;flex-shrink:0;cursor:pointer}
+.wl-body{flex:1;min-width:0}
+.wl-note{font-size:.78rem;color:#57534E;margin-top:.2rem;line-height:1.4}
+.wl-date{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.25rem}
+.wl-del{background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;padding:0 .25rem;line-height:1;opacity:.4;transition:opacity .2s}
+.wl-del:hover{opacity:1;color:#DC2626}
+
 @media(max-width:640px){
   .ct{padding:1.25rem 1rem}.hdr{padding:2rem 1rem 1.5rem}.nav-in{padding:0 .75rem}
   .nb{padding:.7rem .6rem;font-size:.58rem}.c-row{flex-direction:column;gap:.25rem}
   .card.new::after{position:static;display:inline-block;margin-top:.3rem}
   .ck-meta{flex-direction:column;gap:.2rem}
+  .wl-form-row{flex-direction:column}
+  .wl-select{min-width:100%}
 }
 
 </style>
@@ -125,13 +151,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 
 <div class="hdr"><div class="hdr-in">
 
-  <div class="hdr-pre">Itinerario completo · Junio 2–11, 2026</div>
+  <div class="hdr-pre">Itinerario completo \u00b7 Junio 2\u201311, 2026</div>
   <h1>Dani & Pablo en <em>Nueva York</em></h1>
-  <p class="hdr-sub">Itinerario original de Dani + adiciones de research gastronómico para Respect Pizza y Brown Sweet Factory. Formato bariatric-friendly: compartir todo, porciones chicas, hambre frecuente.</p>
+  <p class="hdr-sub">Itinerario original de Dani + adiciones de research gastron\u00f3mico para Respect Pizza y Brown Sweet Factory. Formato bariatric-friendly: compartir todo, porciones chicas, hambre frecuente.</p>
   <div class="hdr-pills">
-    <span class="hdr-pill">🛬 JFK 09:40 Jun 2</span>
-    <span class="hdr-pill">🛫 JFK 19:50 Jun 11</span>
-    <span class="hdr-pill">🏨 The Belleclaire · UWS</span>
+    <span class="hdr-pill">\ud83d\udeec JFK 09:40 Jun 2</span>
+    <span class="hdr-pill">\ud83d\udeeb JFK 19:50 Jun 11</span>
+    <span class="hdr-pill">\ud83c\udfe8 The Belleclaire \u00b7 UWS</span>
     <span class="hdr-pill">9 noches</span>
   </div>
 
@@ -154,6 +180,7 @@ import day09 from './days/day09.js';
 import day10 from './days/day10.js';
 import { renderDay } from './renderer.js';
 import { renderChecklist, initChecklistEvents } from './checklist.js';
+import { renderWishlist, initWishlistEvents } from './wishlist.js';
 
 const days = [day01, day02, day03, day04, day05, day06, day07, day08, day09, day10];
 
@@ -161,7 +188,10 @@ const content = document.getElementById('content');
 let html = days.map((d, i) => renderDay(d, i === 0)).join('\n\n');
 
 // Add checklist section
-html += `<div class="sec" id="checklist"><div class="dh"><div class="dh-num">📋</div><div class="dh-title">Checklist de <em>Reservas</em></div><div class="dh-date">Tickets, restaurantes y verificaciones</div><div class="dh-note">Click en cada item para marcarlo como hecho. Se guarda automáticamente.</div></div>${renderChecklist()}</div>`;
+html += `<div class="sec" id="checklist"><div class="dh"><div class="dh-num">\ud83d\udccb</div><div class="dh-title">Checklist de <em>Reservas</em></div><div class="dh-date">Tickets, restaurantes y verificaciones</div><div class="dh-note">Click en cada item para marcarlo como hecho. Se guarda autom\u00e1ticamente.</div></div>${renderChecklist()}</div>`;
+
+// Add wishlist section
+html += `<div class="sec" id="wishlist"><div class="dh"><div class="dh-num">\ud83d\udccc</div><div class="dh-title">Lugares por <em>Descubrir</em></div><div class="dh-date">Recomendaciones, antojitos y descubrimientos</div><div class="dh-note">Vayan agregando lugares que les recomienden o que encuentren en el camino. Click en \u2b1c para marcar como visitado.</div></div>${renderWishlist()}</div>`;
 
 content.innerHTML = html;
 
@@ -169,7 +199,7 @@ const navIn = document.getElementById('nav-in');
 days.forEach((day, i) => {
   const btn = document.createElement('button');
   btn.className = 'nb' + (i === 0 ? ' on' : '');
-  btn.textContent = 'Día ' + (i + 1);
+  btn.textContent = 'D\u00eda ' + (i + 1);
   btn.addEventListener('click', () => go(day.id, btn));
   navIn.appendChild(btn);
 });
@@ -177,12 +207,22 @@ days.forEach((day, i) => {
 // Add checklist tab
 const ckBtn = document.createElement('button');
 ckBtn.className = 'nb';
-ckBtn.textContent = '📋 Reservas';
+ckBtn.textContent = '\ud83d\udccb Reservas';
 ckBtn.addEventListener('click', () => {
   go('checklist', ckBtn);
   initChecklistEvents();
 });
 navIn.appendChild(ckBtn);
+
+// Add wishlist tab
+const wlBtn = document.createElement('button');
+wlBtn.className = 'nb';
+wlBtn.textContent = '\ud83d\udccc Lugares';
+wlBtn.addEventListener('click', () => {
+  go('wishlist', wlBtn);
+  initWishlistEvents();
+});
+navIn.appendChild(wlBtn);
 
 window.go = function go(id, btn) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
@@ -192,8 +232,9 @@ window.go = function go(id, btn) {
   window.scrollTo({ top: document.querySelector('.ct').offsetTop - 50, behavior: 'smooth' });
 };
 
-// Init checklist events on first load if checklist is active
+// Init events on first load
 initChecklistEvents();
+initWishlistEvents();
 </script>
 
 </body>
