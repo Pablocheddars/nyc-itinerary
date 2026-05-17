@@ -1,41 +1,41 @@
 export default {
   "id": "d6",
   "number": "06",
-  "title": "Brooklyn \u00b7 <em>DUMBO \u00b7 Williamsburg</em>",
-  "date": "Domingo 7 de junio \u00b7 Salida 9:00",
-  "note": "D\u00eda completo en Brooklyn. Cruzar el Brooklyn Bridge a pie \u2014 la foto m\u00e1s ic\u00f3nica del viaje. Brooklyn Flea abre domingos 10am\u20135pm.",
+  "title": "Brooklyn · <em>DUMBO · Williamsburg</em>",
+  "date": "Domingo 7 de junio · Salida 9:30",
+  "note": "Día completo en Brooklyn. Brunch en Greenpoint (Chez Ma Tante), bajar a DUMBO, Brooklyn Flea (abierto domingos 10am–5pm), Williamsburg, Maison Premiere.",
   "alert": null,
   "phases": [
     {
       "type": "am",
-      "label": "Ma\u00f1ana",
+      "label": "Mañana — Greenpoint + DUMBO",
       "events": [
-        { "time": "~9:00", "name": "\ud83e\udd6f Zabar's", "desc": "Instituci\u00f3n del UWS. Deli counter legendario \u2014 bagel con sturgeon o whitefish salad para el camino. Como gastron\u00f3mico vale ver la operaci\u00f3n: producto, display, pricing, rotaci\u00f3n.", "addr": "\ud83d\udccd 2245 Broadway (& 80th St) \u2014 cerca del hotel", "tags": [{ "key": "breakfast", "label": "Desayuno" }], "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "9:30", "name": "\ud83d\ude87 Subway 4/5/6 \u2192 Brooklyn Bridge\u2013City Hall (~20 min)", "desc": null, "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "10:00", "name": "\ud83c\udf09 Brooklyn Bridge \u2014 cruzar a pie", "desc": "De Manhattan a Brooklyn. Carril peatonal arriba. 30\u201340 min. Vista insuperable al llegar. Domingo de ma\u00f1ana tiene buen ritmo.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "10:45", "name": "\ud83d\udcf7 DUMBO \u2014 Washington Street", "desc": "La foto entre los dos pilares del puente con Manhattan al fondo. La imagen m\u00e1s compartida de NYC.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        { "time": "~9:30", "name": "🚕 Uber a Greenpoint (~20 min)", "desc": "Desde el hotel directo a Chez Ma Tante. Greenpoint está pegado a DUMBO — la ruta baja natural hacia el puente.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "10:00", "name": "🥞 Chez Ma Tante — brunch Greenpoint", "desc": "Restaurante Michelin en Greenpoint. Los pancakes son legendarios — esponjosos, con mantequilla y maple. Bistro franco-americano con cocina simple y perfecta. Brunch domingos desde las 10am.", "addr": "📍 90 Calyer St, Greenpoint, Brooklyn", "tags": [{ "key": "breakfast", "label": "Brunch" }, { "key": "must", "label": "Must" }], "tip": { "html": "<strong>Reservar en Resy.</strong> Domingo de brunch se llena rápido. Los pancakes son el must, pero el steak tartare y el boudin noir también son espectaculares." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "~11:30", "name": "🚕 Uber a DUMBO (~10 min)", "desc": "Greenpoint a DUMBO es directo por Manhattan Ave.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "~11:45", "name": "📷 DUMBO — Washington Street", "desc": "La foto entre los dos pilares del puente con Manhattan al fondo. La imagen más compartida de NYC.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
       ]
     },
     {
       "type": "pm",
       "label": "Tarde",
       "events": [
-        { "time": "11:30", "name": "\ud83c\udf55 Grimaldi's Pizzeria", "desc": "Horno a le\u00f1a bajo el puente. Margherita con mozzarella fresca. Llegar antes del rush del mediod\u00eda. Walk-in, fila ~20 min.", "addr": null, "tags": [{ "key": "pizza", "label": "Pizza research" }], "tip": { "html": "<strong>Coal-oven benchmark:</strong> Observar el horno, las temperaturas, la velocidad de cocci\u00f3n. Comparar con lo que har\u00e1 el PizzaMaster el\u00e9ctrico de Respect. Una margherita compartida." }, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "13:00", "name": "\ud83e\uddf3 Brooklyn Flea Market", "desc": "Vintage, dise\u00f1o local, food vendors. Para Pablo: conceptos gastron\u00f3micos para traer ideas. Abierto s\u00e1bados y domingos 10am\u20135pm bajo el Manhattan Bridge Archway.", "addr": "\ud83d\udccd 80 Pearl St, DUMBO", "tags": [{ "key": "sight", "label": "Paseo" }, { "key": "must", "label": "Must" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "15:00", "name": "\ud83c\udf3f Williamsburg \u2014 pasear", "desc": "10 min en Uber desde DUMBO. Murales, tiendas independientes, la escena gastron\u00f3mica m\u00e1s interesante de NYC fuera de Manhattan.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "~15:30", "name": "\u2615 Devoci\u00f3n", "desc": "Caf\u00e9 colombiano con granos que llegan d\u00edas despu\u00e9s de la cosecha, tostados on-site. Local con pared viva de plantas \u2014 como concepto de espacio gastron\u00f3mico y dise\u00f1o de experiencia es espectacular.", "addr": "\ud83d\udccd 69 Grand St, Williamsburg", "tags": [{ "key": "bakery", "label": "Concepto espacio" }], "tip": { "html": "<strong>Concepto de espacio:</strong> No es por el caf\u00e9 \u2014 es por c\u00f3mo dise\u00f1aron el local y la experiencia. Relevante para cualquier nuevo concepto de Cheddars Group." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "~16:00", "name": "\ud83c\udf6a Chip City", "desc": "Cadena de cookies premium con sabores rotativos, modelo simple y escalable. Competidor directo de Levain con approach m\u00e1s fun y accesible.", "addr": null, "tags": [{ "key": "bakery", "label": "Bakery benchmark" }], "tip": { "html": "<strong>vs Levain:</strong> Comparar tama\u00f1o, textura, pricing, branding, rotaci\u00f3n de sabores. Una cookie compartida." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "16:30", "name": "\ud83c\udf66 Ample Hills Creamery", "desc": "Helado artesanal Brooklyn. Sabores \u00fanicos: Ooey Gooey Butter Cake, The Munchies.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        { "time": "12:15", "name": "🍕 Grimaldi's Pizzeria", "desc": "Horno a leña bajo el puente. Margherita con mozzarella fresca. Llegar antes del rush. Walk-in, fila ~20 min.", "addr": null, "tags": [{ "key": "pizza", "label": "Pizza research" }], "tip": { "html": "<strong>Coal-oven benchmark:</strong> Observar el horno, las temperaturas, la velocidad de cocción. Comparar con lo que hará el PizzaMaster eléctrico de Respect. Una margherita compartida." }, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "13:30", "name": "🧳 Brooklyn Flea Market", "desc": "Vintage, diseño local, food vendors. Para Pablo: conceptos gastronómicos para traer ideas. Abierto sábados y domingos 10am–5pm bajo el Manhattan Bridge Archway.", "addr": "📍 80 Pearl St, DUMBO", "tags": [{ "key": "sight", "label": "Paseo" }, { "key": "must", "label": "Must" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "15:00", "name": "🌿 Williamsburg — pasear", "desc": "10 min en Uber desde DUMBO. Murales, tiendas independientes, la escena gastronómica más interesante de NYC fuera de Manhattan.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "~15:30", "name": "☕ Devoción", "desc": "Café colombiano con granos que llegan días después de la cosecha, tostados on-site. Local con pared viva de plantas — como concepto de espacio gastronómico es espectacular.", "addr": "📍 69 Grand St, Williamsburg", "tags": [{ "key": "bakery", "label": "Concepto espacio" }], "tip": { "html": "<strong>Concepto de espacio:</strong> No es por el café — es por cómo diseñaron el local y la experiencia. Relevante para cualquier nuevo concepto de Cheddars Group." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "~16:00", "name": "🍪 Chip City", "desc": "Cadena de cookies premium con sabores rotativos, modelo simple y escalable. Competidor directo de Levain.", "addr": null, "tags": [{ "key": "bakery", "label": "Bakery benchmark" }], "tip": { "html": "<strong>vs Levain:</strong> Comparar tamaño, textura, pricing, branding, rotación de sabores. Una cookie compartida." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "16:30", "name": "🍦 Ample Hills Creamery", "desc": "Helado artesanal Brooklyn. Sabores únicos: Ooey Gooey Butter Cake, The Munchies.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
       ]
     },
     {
       "type": "night",
       "label": null,
-      "nightTitle": "\ud83e\uddea Maison Premiere \u2014 ostras y c\u00f3cteles Belle \u00c9poque",
-      "nightSub": "Williamsburg \u00b7 Top 40 Norteam\u00e9rica \u00b7 Reservar en Resy. Ma\u00f1ana: Summit One Vanderbilt.",
+      "nightTitle": "🧪 Maison Premiere — ostras y cócteles Belle Époque",
+      "nightSub": "Williamsburg · Top 40 Norteamérica · Reservar en Resy (garden). Mañana: Summit One Vanderbilt.",
       "events": [
-        { "time": "18:30", "name": "\ud83e\uddea Maison Premiere", "desc": "Terraza exterior en junio. Ostras $3\u20135 c/u + c\u00f3cteles de absinthe. Uno de los lugares m\u00e1s bellos de NYC. Llegar temprano para terraza.", "addr": null, "tags": [{ "key": "bar", "label": "Cena + Bar" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "21:00", "name": "\ud83d\ude95 Uber de regreso \u2014 UWS (~35\u201345 min / $35\u201345)", "desc": "Ma\u00f1ana es Summit One Vanderbilt.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        { "time": "18:30", "name": "🧪 Maison Premiere — garden", "desc": "Terraza exterior en junio. Ostras $3–5 c/u + cócteles de absinthe. Uno de los lugares más bellos de NYC. Reservado en garden.", "addr": null, "tags": [{ "key": "bar", "label": "Cena + Bar" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "21:00", "name": "🚕 Uber de regreso — UWS (~35–45 min / $35–45)", "desc": "Mañana es Summit One Vanderbilt.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
       ]
     }
   ]
