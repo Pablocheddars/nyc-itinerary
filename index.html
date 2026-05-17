@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NYC Junio 2026 \u2014 Dani & Pablo</title>
+<title>NYC Junio 2026 — Dani & Pablo</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
@@ -151,13 +151,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 
 <div class="hdr"><div class="hdr-in">
 
-  <div class="hdr-pre">Itinerario completo \u00b7 Junio 2\u201311, 2026</div>
+  <div class="hdr-pre">Itinerario completo · Junio 2–11, 2026</div>
   <h1>Dani & Pablo en <em>Nueva York</em></h1>
-  <p class="hdr-sub">Itinerario original de Dani + adiciones de research gastron\u00f3mico para Respect Pizza y Brown Sweet Factory. Formato bariatric-friendly: compartir todo, porciones chicas, hambre frecuente.</p>
+  <p class="hdr-sub">Itinerario original de Dani + adiciones de research gastronómico para Respect Pizza y Brown Sweet Factory. Formato bariatric-friendly: compartir todo, porciones chicas, hambre frecuente.</p>
   <div class="hdr-pills">
-    <span class="hdr-pill">\ud83d\udeec JFK 09:40 Jun 2</span>
-    <span class="hdr-pill">\ud83d\udeeb JFK 19:50 Jun 11</span>
-    <span class="hdr-pill">\ud83c\udfe8 The Belleclaire \u00b7 UWS</span>
+    <span class="hdr-pill">🛬 JFK 09:40 Jun 2</span>
+    <span class="hdr-pill">🛫 JFK 19:50 Jun 11</span>
+    <span class="hdr-pill">🏨 The Belleclaire · UWS</span>
     <span class="hdr-pill">9 noches</span>
   </div>
 
@@ -187,11 +187,9 @@ const days = [day01, day02, day03, day04, day05, day06, day07, day08, day09, day
 const content = document.getElementById('content');
 let html = days.map((d, i) => renderDay(d, i === 0)).join('\n\n');
 
-// Add checklist section
-html += `<div class="sec" id="checklist"><div class="dh"><div class="dh-num">\ud83d\udccb</div><div class="dh-title">Checklist de <em>Reservas</em></div><div class="dh-date">Tickets, restaurantes y verificaciones</div><div class="dh-note">Click en cada item para marcarlo como hecho. Se guarda autom\u00e1ticamente.</div></div>${renderChecklist()}</div>`;
+html += `<div class="sec" id="checklist"><div class="dh"><div class="dh-num">📋</div><div class="dh-title">Checklist de <em>Reservas</em></div><div class="dh-date">Tickets, restaurantes y verificaciones</div><div class="dh-note">Click en cada item para marcarlo como hecho. Se guarda automáticamente.</div></div>${renderChecklist()}</div>`;
 
-// Add wishlist section
-html += `<div class="sec" id="wishlist"><div class="dh"><div class="dh-num">\ud83d\udccc</div><div class="dh-title">Lugares por <em>Descubrir</em></div><div class="dh-date">Recomendaciones, antojitos y descubrimientos</div><div class="dh-note">Vayan agregando lugares que les recomienden o que encuentren en el camino. Click en \u2b1c para marcar como visitado.</div></div>${renderWishlist()}</div>`;
+html += `<div class="sec" id="wishlist"><div class="dh"><div class="dh-num">📌</div><div class="dh-title">Lugares por <em>Descubrir</em></div><div class="dh-date">Recomendaciones, antojitos y descubrimientos</div><div class="dh-note">Vayan agregando lugares que les recomienden o que encuentren en el camino. Click en ⬜ para marcar como visitado.</div></div>${renderWishlist()}</div>`;
 
 content.innerHTML = html;
 
@@ -199,25 +197,23 @@ const navIn = document.getElementById('nav-in');
 days.forEach((day, i) => {
   const btn = document.createElement('button');
   btn.className = 'nb' + (i === 0 ? ' on' : '');
-  btn.textContent = 'D\u00eda ' + (i + 1);
+  btn.textContent = 'Día ' + (i + 1);
   btn.addEventListener('click', () => go(day.id, btn));
   navIn.appendChild(btn);
 });
 
-// Add checklist tab
 const ckBtn = document.createElement('button');
 ckBtn.className = 'nb';
-ckBtn.textContent = '\ud83d\udccb Reservas';
+ckBtn.textContent = '📋 Reservas';
 ckBtn.addEventListener('click', () => {
   go('checklist', ckBtn);
   initChecklistEvents();
 });
 navIn.appendChild(ckBtn);
 
-// Add wishlist tab
 const wlBtn = document.createElement('button');
 wlBtn.className = 'nb';
-wlBtn.textContent = '\ud83d\udccc Lugares';
+wlBtn.textContent = '📌 Lugares';
 wlBtn.addEventListener('click', () => {
   go('wishlist', wlBtn);
   initWishlistEvents();
@@ -232,7 +228,6 @@ window.go = function go(id, btn) {
   window.scrollTo({ top: document.querySelector('.ct').offsetTop - 50, behavior: 'smooth' });
 };
 
-// Init events on first load
 initChecklistEvents();
 initWishlistEvents();
 </script>
