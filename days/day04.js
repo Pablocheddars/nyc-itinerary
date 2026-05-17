@@ -1,41 +1,167 @@
 export default {
   "id": "d4",
   "number": "04",
-  "title": "Brooklyn · <em>DUMBO · Williamsburg</em>",
-  "date": "Viernes 5 de junio · Salida 8:15",
-  "note": "Cruzar el Brooklyn Bridge a pie — la foto más icónica del viaje.",
+  "title": "Estatua de la <em>Libertad</em>",
+  "date": "Viernes 5 de junio \u00b7 Salida 9:00",
+  "note": "D\u00eda completo: ferry a Liberty Island + Ellis Island + Joe's Pizza + West Village. Llevar agua y snacks para el ferry.",
   "alert": null,
   "phases": [
     {
       "type": "am",
-      "label": "Mañana",
+      "label": "Ma\u00f1ana",
       "events": [
-        { "time": "~8:15", "name": "🥯 Zabar's", "desc": "Institución del UWS. Deli counter legendario — bagel con sturgeon o whitefish salad para el camino. Como gastronómico vale ver la operación: producto, display, pricing, rotación.", "addr": "📍 2245 Broadway (& 80th St) — cerca del hotel", "tags": [{ "key": "breakfast", "label": "Desayuno" }], "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "9:00", "name": "🚇 Subway 4/5/6 → Brooklyn Bridge–City Hall (~20 min)", "desc": null, "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "9:45", "name": "🌉 Brooklyn Bridge — cruzar a pie", "desc": "De Manhattan a Brooklyn. Carril peatonal arriba. 30–40 min. Vista insuperable al llegar. De mañana hay menos ciclistas.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "10:30", "name": "📷 DUMBO — Washington Street", "desc": "La foto entre los dos pilares del puente con Manhattan al fondo. La imagen más compartida de NYC.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        {
+          "time": "~9:00",
+          "name": "\ud83e\udd50 Orwasher's Bakery",
+          "desc": "Bakery del UWS con m\u00e1s de 100 a\u00f1os. Bagels de sourdough steam-baked \u2014 approach completamente distinto al boiled cl\u00e1sico. Croissants y pasteler\u00eda excelente. La base sourdough conecta con el mundo de masa fermentada.",
+          "addr": null,
+          "tags": [
+            { "key": "breakfast", "label": "Desayuno" },
+            { "key": "bakery", "label": "Bakery" }
+          ],
+          "tip": null,
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "9:45",
+          "name": "\ud83d\ude87 L\u00ednea 1 \u2192 South Ferry (~30 min)",
+          "desc": null,
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "10:30",
+          "name": "\ud83d\uddfd Ferry + Estatua de la Libertad",
+          "desc": "Ferry 20 min desde Battery Park. Liberty Island: estatua, museo de la base, vistas a Manhattan.",
+          "addr": "\u26a0\ufe0f statuecruises.com \u2014 \u00fanico sitio oficial. Pedestal agotado pronto en verano. ~$25 ferry b\u00e1sico.",
+          "tags": [
+            { "key": "sight", "label": "Paseo" }
+          ],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "12:30",
+          "name": "\ud83c\udfdb\ufe0f Ellis Island \u2014 incluido en el ticket",
+          "desc": "El museo de la inmigraci\u00f3n americana. Uno de los m\u00e1s emocionantes de NYC. 1.5h.",
+          "addr": null,
+          "tags": [
+            { "key": "sight", "label": "Paseo" }
+          ],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        }
       ]
     },
     {
       "type": "pm",
       "label": "Tarde",
       "events": [
-        { "time": "12:00", "name": "🍕 Grimaldi's Pizzeria", "desc": "Horno a leña bajo el puente. Margherita con mozzarella fresca. Llegar antes de las 12h. Walk-in, fila ~20 min.", "addr": null, "tags": [{ "key": "pizza", "label": "Pizza research" }], "tip": { "html": "<strong>Coal-oven benchmark:</strong> Observar el horno, las temperaturas, la velocidad de cocción. Comparar con lo que hará el PizzaMaster eléctrico de Respect. Una margherita compartida." }, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "13:30", "name": "🧳 Brooklyn Flea Market", "desc": "Vintage, diseño local, food vendors. Para Pablo: conceptos gastronómicos para traer ideas. ⚠️ Verificar en brooklynflea.com si opera los viernes — normalmente es sábado/domingo. Si no hay Flea, caminar directo a Williamsburg.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "15:00", "name": "🌿 Williamsburg — pasear", "desc": "10 min en Uber desde DUMBO. Murales, tiendas independientes, la escena gastronómica más interesante de NYC fuera de Manhattan.", "addr": null, "tags": [{ "key": "sight", "label": "Paseo" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "~15:30", "name": "☕ Devoción", "desc": "Café colombiano con granos que llegan días después de la cosecha, tostados on-site. Local con pared viva de plantas — como concepto de espacio gastronómico y diseño de experiencia es espectacular.", "addr": "📍 69 Grand St, Williamsburg", "tags": [{ "key": "bakery", "label": "Concepto espacio" }], "tip": { "html": "<strong>Concepto de espacio:</strong> No es por el café — es por cómo diseñaron el local y la experiencia. Relevante para cualquier nuevo concepto de Cheddars Group." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "~16:00", "name": "🍪 Chip City", "desc": "Cadena de cookies premium con sabores rotativos, modelo simple y escalable. Competidor directo de Levain con approach más fun y accesible.", "addr": null, "tags": [{ "key": "bakery", "label": "Bakery benchmark" }], "tip": { "html": "<strong>vs Levain:</strong> Comparar tamaño, textura, pricing, branding, rotación de sabores. Una cookie compartida." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "16:30", "name": "🍦 Ample Hills Creamery", "desc": "Helado artesanal Brooklyn. Sabores únicos: Ooey Gooey Butter Cake, The Munchies.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        {
+          "time": "~14:30",
+          "name": "\ud83c\udf0a Battery Park \u2014 paseo costero",
+          "desc": "Vista a la Estatua desde tierra. Buena foto de cierre del ferry. Descansar en los jardines antes de caminar al Village.",
+          "addr": null,
+          "tags": [
+            { "key": "sight", "label": "Paseo" }
+          ],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~15:00",
+          "name": "\ud83c\udf55 Joe's Pizza \u2014 slice cl\u00e1sico",
+          "desc": "Joe's Pizza desde 1975. La referencia absoluta de pizza en NY. Margherita, de pie en la calle. Subway o caminar desde Battery Park hacia el norte \u2014 queda en Carmine St, West Village.",
+          "addr": "\ud83d\udccd 7 Carmine St, West Village",
+          "tags": [
+            { "key": "pizza", "label": "Pizza research" },
+            { "key": "must", "label": "Must" }
+          ],
+          "tip": {
+            "html": "<strong>Benchmark #1 para Respect:</strong> C\u00f3mo estiran (\u00bfmano, rodillo?), temperaturas del horno, tiempo de horneado, display, m\u00e9todo de reheat, pricing slice vs pie, pies/hora, tama\u00f1o del equipo. Este es TU formato de 18\\\"."
+          },
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~16:00",
+          "name": "\ud83d\udeb6 Paseo West Village",
+          "desc": "Ya est\u00e1n en el Village despu\u00e9s de Joe's. Caminar Bleecker St, Hudson St, las callecitas arboladas. El barrio m\u00e1s lindo de Manhattan para caminar sin rumbo. Volver al hotel cuando quieran.",
+          "addr": null,
+          "tags": [
+            { "key": "sight", "label": "Paseo" }
+          ],
+          "tip": null,
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        }
       ]
     },
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🦪 Maison Premiere — ostras y cócteles Belle Époque",
-      "nightSub": "Williamsburg · Top 40 Norteamérica · Reservar en Resy",
+      "nightTitle": "\ud83c\udf19 Japonesa moderna + rooftop con Empire State",
+      "nightSub": "Cenar cerca del hotel, cerrar con Empire State iluminado. Ma\u00f1ana: Whitney + High Line + Marquee/Diplo.",
       "events": [
-        { "time": "18:30", "name": "🦪 Maison Premiere", "desc": "Terraza exterior en junio. Ostras $3–5 c/u + cócteles de absinthe. Uno de los lugares más bellos de NYC. Llegar temprano para terraza.", "addr": null, "tags": [{ "key": "bar", "label": "Cena + Bar" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "21:00", "name": "🚕 Uber de regreso — UWS (~35–45 min / $35–45)", "desc": null, "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        {
+          "time": "19:30",
+          "name": "\ud83c\udf63 Idachi \u2014 japonesa moderna UWS",
+          "desc": "Cerca del hotel. Japonesa de autor \u2014 buena propuesta sin ir lejos. Reservar en Resy.",
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~21:00",
+          "name": "\ud83c\udfd9\ufe0f 230 Fifth Rooftop \u2014 Empire State de noche",
+          "desc": "Sin reserva, sin cover. Vista directa al Empire State iluminado. Drinks ~$18 USD. Despu\u00e9s de ver la Estatua desde el agua, cerrar el d\u00eda viendo el Empire desde las alturas.",
+          "addr": null,
+          "tags": [
+            { "key": "bar", "label": "Bar" }
+          ],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~22:30",
+          "name": "\ud83d\ude34 Uber al hotel",
+          "desc": "Descansar bien \u2014 ma\u00f1ana es Whitney, High Line y noche de Diplo en Marquee.",
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        }
       ]
     }
   ]
