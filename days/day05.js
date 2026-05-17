@@ -2,7 +2,7 @@ export default {
   "id": "d5",
   "number": "05",
   "title": "Whitney · <em>High Line · West Village</em>",
-  "date": "Viernes 6 de junio · Noche de electrónica 🎧",
+  "date": "Sábado 6 de junio · Noche de electrónica 🎧",
   "note": "Día completo: museo, paseo, research y warm-up pre-club. Guardar energía en la tarde.",
   "alert": null,
   "phases": [
@@ -234,7 +234,7 @@ export default {
           "time": "23:00",
           "name": "🎧 Marquee Skydeck — electrónica 300m sobre Manhattan",
           "desc": "El nightclub más alto del mundo. House y electrónica con DJs internacionales. El skyline completo iluminado mientras bailan.",
-          "addr": "Ticket en edgenyc.com. Revisar DJ del viernes 6.",
+          "addr": "Ticket en edgenyc.com. Revisar DJ del sábado 6.",
           "tags": [
             {
               "key": "bar",

@@ -2,7 +2,7 @@ export default {
   "id": "d6",
   "number": "06",
   "title": "Estatua de la <em>Libertad</em>",
-  "date": "Sábado 7 de junio · Post-club · Salida 10:00",
+  "date": "Domingo 7 de junio · Post-club · Salida 10:00",
   "note": "Post-noche de club — salida más tarde. Ferry de las 11am.",
   "alert": null,
   "phases": [
@@ -157,7 +157,7 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🌙 Recuperación post-viernes + rooftop",
+      "nightTitle": "🌙 Recuperación post-sábado + rooftop",
       "nightSub": "Cenar en el barrio, cerrar con Empire State iluminado. Mañana: The Met.",
       "events": [
         {

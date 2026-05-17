@@ -93,10 +93,30 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line
 .bari{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FCD34D;border-radius:6px;padding:1rem 1.15rem;margin-bottom:1.25rem;font-size:.78rem;line-height:1.55;color:#78350F}
 .bari strong{color:#92400E}
 
+/* CHECKLIST */
+.ck-progress{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);margin-bottom:1.5rem;padding:.6rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:6px}
+.ck-count{font-weight:600;color:var(--pizza);font-size:.85rem}
+.ck-group{margin-bottom:1.5rem}
+.ck-cat{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.35rem;border-bottom:1px solid var(--border)}
+.ck-item{display:flex;gap:.75rem;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:.85rem 1rem;margin-bottom:.5rem;cursor:pointer;transition:all .2s}
+.ck-item:hover{box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.ck-item.done{opacity:.55;border-left:3px solid #4D7C0F}
+.ck-item.done .ck-name{text-decoration:line-through}
+.ck-check{font-size:1.1rem;line-height:1;padding-top:.1rem;flex-shrink:0}
+.ck-body{flex:1;min-width:0}
+.ck-name{font-family:'Instrument Serif',serif;font-size:1.05rem;line-height:1.3}
+.ck-meta{display:flex;flex-wrap:wrap;gap:.4rem .8rem;margin-top:.3rem}
+.ck-time{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--pizza);font-weight:500}
+.ck-day{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted)}
+.ck-price{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--breakfast);font-weight:500}
+.ck-link{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--sight);margin-top:.3rem;text-decoration:none}
+.ck-link:hover{text-decoration:underline}
+
 @media(max-width:640px){
   .ct{padding:1.25rem 1rem}.hdr{padding:2rem 1rem 1.5rem}.nav-in{padding:0 .75rem}
   .nb{padding:.7rem .6rem;font-size:.58rem}.c-row{flex-direction:column;gap:.25rem}
   .card.new::after{position:static;display:inline-block;margin-top:.3rem}
+  .ck-meta{flex-direction:column;gap:.2rem}
 }
 
 </style>
@@ -133,11 +153,17 @@ import day08 from './days/day08.js';
 import day09 from './days/day09.js';
 import day10 from './days/day10.js';
 import { renderDay } from './renderer.js';
+import { renderChecklist, initChecklistEvents } from './checklist.js';
 
 const days = [day01, day02, day03, day04, day05, day06, day07, day08, day09, day10];
 
 const content = document.getElementById('content');
-content.innerHTML = days.map((d, i) => renderDay(d, i === 0)).join('\n\n');
+let html = days.map((d, i) => renderDay(d, i === 0)).join('\n\n');
+
+// Add checklist section
+html += `<div class="sec" id="checklist"><div class="dh"><div class="dh-num">📋</div><div class="dh-title">Checklist de <em>Reservas</em></div><div class="dh-date">Tickets, restaurantes y verificaciones</div><div class="dh-note">Click en cada item para marcarlo como hecho. Se guarda automáticamente.</div></div>${renderChecklist()}</div>`;
+
+content.innerHTML = html;
 
 const navIn = document.getElementById('nav-in');
 days.forEach((day, i) => {
@@ -148,6 +174,16 @@ days.forEach((day, i) => {
   navIn.appendChild(btn);
 });
 
+// Add checklist tab
+const ckBtn = document.createElement('button');
+ckBtn.className = 'nb';
+ckBtn.textContent = '📋 Reservas';
+ckBtn.addEventListener('click', () => {
+  go('checklist', ckBtn);
+  initChecklistEvents();
+});
+navIn.appendChild(ckBtn);
+
 window.go = function go(id, btn) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(b => b.classList.remove('on'));
@@ -155,6 +191,9 @@ window.go = function go(id, btn) {
   if (btn) btn.classList.add('on');
   window.scrollTo({ top: document.querySelector('.ct').offsetTop - 50, behavior: 'smooth' });
 };
+
+// Init checklist events on first load if checklist is active
+initChecklistEvents();
 </script>
 
 </body>

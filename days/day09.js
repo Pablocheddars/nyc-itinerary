@@ -2,7 +2,7 @@ export default {
   "id": "d9",
   "number": "09",
   "title": "Harlem · <em>Últimas compras · Employees Only</em>",
-  "date": "Martes 10 de junio · Salida 9:30",
+  "date": "Miércoles 10 de junio · Salida 9:30",
   "note": "Última noche real — Employees Only cierra el viaje como se merece. Día intencionalmente liviano: buffer para repetir favoritos o lo que haya quedado pendiente.",
   "alert": null,
   "phases": [

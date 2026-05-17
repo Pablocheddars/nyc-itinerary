@@ -2,9 +2,9 @@ export default {
   "id": "d10",
   "number": "10",
   "title": "Salida · <em>Ruta final de research</em>",
-  "date": "Miércoles 11 de junio · Vuelo JFK 19:50",
+  "date": "Jueves 11 de junio · Vuelo JFK 19:50",
   "note": "No desperdiciar este día. Checkout 9:00, vuelo 19:50 — hay 7 horas para la última ronda.",
-  "alert": "<strong>Timing crítico:</strong> Checkout 9:00, dejan maletas en el hotel (The Belleclaire guarda equipaje). Ruta de research 10:00–14:00. Uber a JFK a las 16:00 máximo (llegar ~17:00–17:30, 2h+ antes del vuelo). El tráfico de miércoles tarde a JFK puede ser impredecible — no cortar más tarde.",
+  "alert": "<strong>Timing crítico:</strong> Checkout 9:00, dejan maletas en el hotel (The Belleclaire guarda equipaje). Ruta de research 10:00–14:00. Uber a JFK a las 16:00 máximo (llegar ~17:00–17:30, 2h+ antes del vuelo). El tráfico de jueves tarde a JFK puede ser impredecible — no cortar más tarde.",
   "phases": [
     {
       "type": "am",
@@ -127,7 +127,7 @@ export default {
         {
           "time": "~16:00",
           "name": "✈️ Traslado al aeropuerto",
-          "desc": "<strong>JFK:</strong> Uber ~50–60 min / $55–70. O AirTrain + subway ~$9. <strong>Salir 3h antes.</strong> No negociable con el tráfico de miércoles tarde.",
+          "desc": "<strong>JFK:</strong> Uber ~50–60 min / $55–70. O AirTrain + subway ~$9. <strong>Salir 3h antes.</strong> No negociable con el tráfico de jueves tarde.",
           "addr": null,
           "tags": [
             {
