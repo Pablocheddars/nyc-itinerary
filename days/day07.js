@@ -166,7 +166,7 @@ export default {
         {
           "time": "~22:00",
           "name": "😴 Uber al hotel",
-          "desc": "Noche corta. Mañana es Met + Eataly + Katz's + Attaboy.",
+          "desc": "Noche corta. Mañana es Met + Eataly + el Big Apple Grand Prix en Double Chicken Please.",
           "addr": null,
           "tags": [],
           "tip": null,

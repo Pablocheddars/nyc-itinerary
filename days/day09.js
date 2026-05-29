@@ -3,7 +3,7 @@ export default {
   "number": "09",
   "title": "Harlem · <em>Jersey Gardens · Última noche</em>",
   "date": "Miércoles 10 de junio · Salida 9:30",
-  "note": "Mañana en Harlem (Sylvia's) → tarde de compras tax-free en Jersey Gardens (NJ) → última noche con cena en Crane Club. El bar de cierre quedó por definir (Employees Only se adelantó al miércoles 3).",
+  "note": "Mañana en Harlem (Sylvia's) → tarde de compras tax-free en Jersey Gardens (NJ) → última noche con cena en Crane Club y cierre en Attaboy (la última copa del viaje).",
   "alert": null,
   "phases": [
     {
@@ -148,8 +148,8 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🥩 Última noche — Crane Club + última copa",
-      "nightSub": "Cena en el West Village y el brindis de cierre (bar por definir)",
+      "nightTitle": "🥩 Crane Club → 🍸 Attaboy — el cierre del viaje",
+      "nightSub": "Cena en el West Village y la última copa a medida en Attaboy (LES, walk-in)",
       "events": [
         {
           "time": "~18:15",
@@ -186,14 +186,18 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "~20:30",
-          "name": "🍸 Última copa — POR DEFINIR",
-          "desc": "El cierre del viaje quedó por decidir (Employees Only se adelantó al miércoles 3). Candidatos para la última copa en el West Village: repetir Sip & Guzzle (Guzzle arriba es walk-in), o volver a Attaboy/Caffe Dante. Double Chicken Please sería ideal pero está difícil de reservar. Lo definimos más cerca de la fecha.",
-          "addr": "⚠️ Pendiente de elegir/reservar",
+          "time": "20:30",
+          "name": "🍸 Attaboy — 134 Eldridge St (cierre del viaje)",
+          "desc": "La última copa de NYC. Puerta sin letrero — esperar afuera. Decirle al bartender qué espirituosos les gustan y qué sabores quieren; el cóctel resultante, a medida, es el broche perfecto. Walk-in, sin reservas — no dependes de cupos. Uber corto desde Crane Club (West Village → LES).",
+          "addr": "Walk-in. No reservas. Llegar ~20:30 para evitar fila larga. 134 Eldridge St, LES.",
           "tags": [
             {
               "key": "bar",
-              "label": "Por definir"
+              "label": "Bar"
+            },
+            {
+              "key": "must",
+              "label": "Must"
             }
           ],
           "tip": null,

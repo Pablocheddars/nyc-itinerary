@@ -43,10 +43,40 @@ export default {
     },
     {
       "type": "pm",
-      "label": "Ruta final de pizza research",
+      "label": "Ruta final de research — LES & Nolita",
       "events": [
         {
-          "time": "~10:30",
+          "time": "~9:45",
+          "name": "🚕 Bajar al Lower East Side (~20 min)",
+          "desc": "Después del check-out, Uber o subway (línea F a 2nd Ave) del UWS al LES para arrancar la ruta final de comida.",
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": true
+        },
+        {
+          "time": "~10:15",
+          "name": "🥩 Katz's Delicatessen — pastrami desde 1888",
+          "desc": "El deli más icónico de América, ahora como brunch de despedida. Pastrami cortado a mano, mostaza, pan de centeno. Ir ~10am es la jugada: te ahorras la fila monstruosa del mediodía. Compartir un pastrami sandwich.",
+          "addr": "📍 205 E Houston St, Lower East Side",
+          "tags": [
+            {
+              "key": "must",
+              "label": "Must"
+            }
+          ],
+          "tip": {
+            "html": "<strong>Caso de estudio operativo:</strong> 138 años con el mismo producto. Sistema de tickets en el counter, carving a la vista, manejo de filas de 200+ personas con flujo constante." },
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~11:15",
           "name": "🍕 Scarr's Pizza",
           "desc": "NY slice con harina molida in-house. El approach artesanal al formato de 18\" — masa ligera, crujiente, con sabor de harina que no encuentras en otro slice shop. Muestra hasta dónde puedes llevar el producto sin salirte del concepto.",
           "addr": "📍 35 Orchard St, Lower East Side",
@@ -69,7 +99,7 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "~11:30",
+          "time": "~12:00",
           "name": "🍕 Prince Street Pizza",
           "desc": "El pepperoni square icónico — Sicilian-style con pepperoni cups que se llenan de grasa. No es el formato de 18\" pero es imperdible para entender el square slice. La fila es larga pero vale la pena.",
           "addr": "📍 27 Prince St, Nolita · 10 min caminando desde Scarr's",
