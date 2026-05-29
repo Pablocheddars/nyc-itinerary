@@ -121,23 +121,23 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🐔 Double Chicken Please — cócteles que son comidas",
-      "nightSub": "LES · #2 World's 50 Best Bars · Reservar The Coop",
+      "nightTitle": "🍸 Employees Only — coctelería clásica en el West Village",
+      "nightSub": "#45 Norteamérica · Tarot reader · Live music · Cocina hasta las 3:30am · Reserva confirmada",
       "events": [
         {
           "time": "~20:40",
-          "name": "🚕 Uber del Rock al LES (~20 min)",
-          "desc": "Bajar directo del Top of the Rock hacia el Lower East Side.",
+          "name": "🚕 Uber del Rock al West Village (~20 min)",
+          "desc": "Bajar directo del Top of the Rock hacia Hudson St.",
           "addr": null,
           "tags": [],
           "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": true
         },
         {
           "time": "~21:00",
-          "name": "🐔 Double Chicken Please — The Coop",
-          "desc": "Los cócteles más creativos de NYC — comidas deconstruidas en trago. Cold Pizza, Ramen, Sushi. Reservar la sala trasera (The Coop) para sentarse sin apuro. Para Pablo: goldmine de coctelería conceptual.",
-          "addr": "Reservar The Coop en Resy. 115 Allen St, Lower East Side.",
-          "tags": [{ "key": "bar", "label": "Bar" }],
+          "name": "🍸 Employees Only — 510 Hudson St (RESERVA)",
+          "desc": "Tarot reader en la entrada — pasar su filtro. Live music toda la noche, coctelería clásica perfecta y cocina hasta las 3:30am, así que también resuelve la cena post-Rock. Para Pablo: clásicos ejecutados a la perfección.",
+          "addr": "✅ Reserva confirmada · Miércoles 3 · 510 Hudson St, West Village",
+          "tags": [{ "key": "bar", "label": "Bar" }, { "key": "must", "label": "Must" }],
           "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false
         },
         {

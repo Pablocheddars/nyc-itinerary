@@ -1,9 +1,9 @@
 export default {
   "id": "d9",
   "number": "09",
-  "title": "Harlem · <em>Últimas compras · Employees Only</em>",
+  "title": "Harlem · <em>Jersey Gardens · Última noche</em>",
   "date": "Miércoles 10 de junio · Salida 9:30",
-  "note": "Mañana en Harlem (Sylvia's) → tarde de compras tax-free en Jersey Gardens (NJ) → última noche con Crane Club + Employees Only, que cierra el viaje como se merece.",
+  "note": "Mañana en Harlem (Sylvia's) → tarde de compras tax-free en Jersey Gardens (NJ) → última noche con cena en Crane Club. El bar de cierre quedó por definir (Employees Only se adelantó al miércoles 3).",
   "alert": null,
   "phases": [
     {
@@ -148,8 +148,8 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🍸 Employees Only — el cierre perfecto",
-      "nightSub": "#45 Norteamérica · Tarot reader · Live music · Cocina hasta las 3:30am",
+      "nightTitle": "🥩 Última noche — Crane Club + última copa",
+      "nightSub": "Cena en el West Village y el brindis de cierre (bar por definir)",
       "events": [
         {
           "time": "~18:15",
@@ -186,18 +186,18 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "20:30",
-          "name": "🍸 Employees Only — 510 Hudson St",
-          "desc": "Tarot reader en la entrada — pasar su filtro. Live music toda la noche, coctelería clásica perfecta, cocina hasta las 3:30am. La última copa de NYC, en el lugar correcto. Llegar temprano para disfrutar sin apuro.",
-          "addr": "Reservar con anticipación. Llegar puntual.",
+          "time": "~20:30",
+          "name": "🍸 Última copa — POR DEFINIR",
+          "desc": "El cierre del viaje quedó por decidir (Employees Only se adelantó al miércoles 3). Candidatos para la última copa en el West Village: repetir Sip & Guzzle (Guzzle arriba es walk-in), o volver a Attaboy/Caffe Dante. Double Chicken Please sería ideal pero está difícil de reservar. Lo definimos más cerca de la fecha.",
+          "addr": "⚠️ Pendiente de elegir/reservar",
           "tags": [
             {
               "key": "bar",
-              "label": "Bar"
+              "label": "Por definir"
             }
           ],
           "tip": null,
-          "isNew": false,
+          "isNew": true,
           "isReplaced": false,
           "replacedNote": null,
           "isLogistic": false

@@ -32,7 +32,7 @@ export default {
       "events": [
         { "time": "~18:30", "name": "🥩 Katz's Delicatessen — pastrami desde 1888", "desc": "El deli más icónico de América. Pastrami sandwich cortado a mano, mostaza, pan de centeno. $30+ el sandwich pero es legendario. A 1 cuadra de Attaboy.", "addr": "📍 205 E Houston St, Lower East Side", "tags": [{ "key": "must", "label": "Must" }], "tip": { "html": "<strong>Caso de estudio operativo:</strong> 138 años con el mismo producto. Sistema de tickets en el counter, carving a la vista, manejo de filas de 200+ personas con flujo constante. Compartir un pastrami sandwich." }, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
         { "time": "20:30", "name": "🍸 Attaboy — 134 Eldridge St", "desc": "Puerta sin letrero — esperar afuera. Decirle al bartender qué espírituosos les gusta y qué sabores quieren. El cóctel resultante: el mejor del viaje.", "addr": "Walk-in. No reservas. Llegar a las 20:30 para evitar fila larga.", "tags": [{ "key": "bar", "label": "Bar" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
-        { "time": "~22:30", "name": "😴 Uber al hotel", "desc": "Mañana es Harlem + última noche en Employees Only.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
+        { "time": "~22:30", "name": "😴 Uber al hotel", "desc": "Mañana es Harlem, Jersey Gardens y la última noche en el West Village.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
       ]
     }
   ]
