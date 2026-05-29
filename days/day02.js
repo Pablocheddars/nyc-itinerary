@@ -106,10 +106,10 @@ export default {
           "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false
         },
         {
-          "time": "~19:00",
-          "name": "🏙️ Top of the Rock — slot sunset",
-          "desc": "Piso 70 Rockefeller Center. En junio el sol cae ~20:20 — el slot de las 19:00 es perfecto para ver la golden hour completa y Manhattan iluminándose. 1h arriba.",
-          "addr": "⚠️ topoftherocknyc.com — slots sunset se agotan rápido. ~$46 USD. Reservar el de las 19:00.",
+          "time": "19:20",
+          "name": "🏙️ Top of the Rock — slot sunset (RESERVA)",
+          "desc": "Piso 70 Rockefeller Center. En junio el sol cae ~20:20 — el slot de las 19:20 es perfecto para ver la golden hour completa y Manhattan iluminándose. 1h arriba.",
+          "addr": "✅ Reserva confirmada · Miércoles 3, 19:20 · topoftherocknyc.com",
           "tags": [
             { "key": "sight", "label": "Paseo" },
             { "key": "must", "label": "Must" }
@@ -121,21 +121,29 @@ export default {
     {
       "type": "night",
       "label": null,
-      "nightTitle": "🍸 Sip & Guzzle · #1 bar de Norteamérica",
-      "nightSub": "50 Best Bars North America 2026 · Noche corta para descansar",
+      "nightTitle": "🐔 Double Chicken Please — cócteles que son comidas",
+      "nightSub": "LES · #2 World's 50 Best Bars · Reservar The Coop",
       "events": [
         {
-          "time": "~20:30",
-          "name": "🍸 Sip & Guzzle — #1 Norteamérica 2026",
-          "desc": "West Village. Ir a Sip (planta baja) — cócteles japoneses de precisión. A5 Wagyu burger si hay hambre todavía. Bajar directo del Rock.",
-          "addr": "Reservar en Resy. Planta alta (Guzzle) suele ser walk-in.",
-          "tags": [{ "key": "bar", "label": "Bar" }],
-          "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false
+          "time": "~20:40",
+          "name": "🚕 Uber del Rock al LES (~20 min)",
+          "desc": "Bajar directo del Top of the Rock hacia el Lower East Side.",
+          "addr": null,
+          "tags": [],
+          "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": true
         },
         {
-          "time": "~22:30",
+          "time": "~21:00",
+          "name": "🐔 Double Chicken Please — The Coop",
+          "desc": "Los cócteles más creativos de NYC — comidas deconstruidas en trago. Cold Pizza, Ramen, Sushi. Reservar la sala trasera (The Coop) para sentarse sin apuro. Para Pablo: goldmine de coctelería conceptual.",
+          "addr": "Reservar The Coop en Resy. 115 Allen St, Lower East Side.",
+          "tags": [{ "key": "bar", "label": "Bar" }],
+          "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false
+        },
+        {
+          "time": "~23:00",
           "name": "😴 Uber al hotel",
-          "desc": "Noche a hora razonable. Mañana es el día más intenso de food research (Downtown).",
+          "desc": "Noche a hora razonable. Mañana es el día más intenso de food research (Downtown) + Sip & Guzzle a las 16:00.",
           "addr": null,
           "tags": [],
           "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false

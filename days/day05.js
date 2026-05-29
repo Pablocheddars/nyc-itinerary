@@ -31,7 +31,7 @@ export default {
       "nightTitle": "🌙 Recuperación + rooftop",
       "nightSub": "Cenar en el barrio, cerrar con Empire State iluminado. Mañana: Brooklyn.",
       "events": [
-        { "time": "19:30", "name": "🍣 Idashi — japonesa moderna UWS", "desc": "Cerca del hotel. Japonesa de autor — buena propuesta sin ir lejos. Reservar en Resy.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
+        { "time": "19:30", "name": "🍣 Idashi — omakase (RESERVA)", "desc": "Cerca del hotel. Japonesa de autor — omakase reservado para las 19:30. Dejarse llevar por el chef, ~1.5–2h en barra. No llegar tarde: el omakase arranca a la hora.", "addr": "✅ Reserva confirmada · Sábado 6, 19:30 · omakase", "tags": [{ "key": "must", "label": "Reserva" }], "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false },
         { "time": "~21:00", "name": "🏙️ 230 Fifth Rooftop — Empire State de noche", "desc": "Sin reserva, sin cover. Vista directa al Empire State iluminado. Drinks ~$18 USD.", "addr": null, "tags": [{ "key": "bar", "label": "Bar" }], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false },
         { "time": "~22:30", "name": "😴 Uber al hotel", "desc": "Noche a hora razonable. Mañana es Brooklyn — con energía.", "addr": null, "tags": [], "tip": null, "isNew": false, "isReplaced": false, "replacedNote": null, "isLogistic": false }
       ]

@@ -3,7 +3,7 @@ export default {
   "number": "09",
   "title": "Harlem · <em>Últimas compras · Employees Only</em>",
   "date": "Miércoles 10 de junio · Salida 9:30",
-  "note": "Última noche real — Employees Only cierra el viaje como se merece. Día intencionalmente liviano: buffer para repetir favoritos o lo que haya quedado pendiente.",
+  "note": "Mañana en Harlem (Sylvia's) → tarde de compras tax-free en Jersey Gardens (NJ) → última noche con Crane Club + Employees Only, que cierra el viaje como se merece.",
   "alert": null,
   "phases": [
     {
@@ -67,10 +67,56 @@ export default {
       "label": "Tarde — buffer + últimas compras",
       "events": [
         {
-          "time": "~13:00",
+          "time": "~12:30",
+          "name": "🚕 Uber a Jersey Gardens (~40 min)",
+          "desc": "Directo desde Harlem/UWS al outlet en Nueva Jersey. ~$45–60 o NJ Transit bus 111 desde Port Authority.",
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": true
+        },
+        {
+          "time": "~13:15",
+          "name": "🛍️ The Mills at Jersey Gardens — outlet",
+          "desc": "El outlet más grande de NJ. Lo clave: en Nueva Jersey la ropa y el calzado NO pagan sales tax — precios reales más bajos que Manhattan. Nike, Adidas, Polo, Coach, Tommy, Michael Kors, Columbia. ~3h para hacerlo bien. Acá se concentra el grueso de las compras del viaje.",
+          "addr": "📍 651 Kapkowski Rd, Elizabeth, NJ · tax-free en ropa y calzado",
+          "tags": [
+            {
+              "key": "shop",
+              "label": "Compras"
+            },
+            {
+              "key": "must",
+              "label": "Must"
+            }
+          ],
+          "tip": {
+            "html": "<strong>Tip:</strong> Pasar primero por el Simon Guest Services / customer service — suelen tener un cupón book con descuentos extra por mostrar pasaporte/ID extranjero. Llevar maleta vacía o bolsas grandes." },
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~16:30",
+          "name": "🚕 Uber de regreso al hotel (~40 min)",
+          "desc": "Volver al UWS a dejar las compras antes de la última noche.",
+          "addr": null,
+          "tags": [],
+          "tip": null,
+          "isNew": true,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": true
+        },
+        {
+          "time": "~17:15",
           "name": "🍗 Poulette Rotisserie — observar el formato tendencia 2026",
-          "desc": "Rotisserie chicken estilo París — el formato que está explotando en NYC este año. Queda cerca del hotel en Amsterdam Ave. No es para comer necesariamente (vienen de Sylvia's), pero pasar a ver cómo opera: pollo entero + frites, menú mínimo, formato simple y escalable.",
-          "addr": "📍 Amsterdam Ave & 88th St, UWS — camino de vuelta de Harlem",
+          "desc": "Pasada rápida al volver: queda cerca del hotel en Amsterdam Ave. Rotisserie chicken estilo París — el formato que está explotando en NYC este año. No es para comer (la noche es Crane Club), pero ver cómo opera: pollo entero + frites, menú mínimo, formato simple y escalable. Aprovechar para pendientes de farmacia (CVS/Walgreens) en la cuadra.",
+          "addr": "📍 Amsterdam Ave & 88th St, UWS — al lado del hotel",
           "tags": [
             {
               "key": "sight",
@@ -86,62 +132,9 @@ export default {
           "isLogistic": false
         },
         {
-          "time": "13:30",
-          "name": "👕 Zara 5th Ave + pendientes",
-          "desc": "Colecciones USA. CVS/Walgreens para suplementos y beauty. Último recorrido.",
-          "addr": null,
-          "tags": [
-            {
-              "key": "shop",
-              "label": "Compras"
-            }
-          ],
-          "tip": null,
-          "isNew": false,
-          "isReplaced": false,
-          "replacedNote": null,
-          "isLogistic": false
-        },
-        {
-          "time": "~14:30",
-          "name": "🧁 Veniero's Pasticceria (1894)",
-          "desc": "Pastelería italiana de 130+ años. El cheesecake más legendario de NYC. Cannoli, rainbow cookies. Hay lecciones de longevidad de marca que ningún MBA te enseña.",
-          "addr": "📍 342 E 11th St, East Village",
-          "tags": [
-            {
-              "key": "bakery",
-              "label": "Bakery benchmark"
-            }
-          ],
-          "tip": {
-            "html": "<strong>130 años de marca:</strong> ¿Qué hace que sobreviva? Producto consistente, identidad clara, cero pretensión de ser trendy. Un cheesecake slice + un cannoli compartidos."
-          },
-          "isNew": true,
-          "isReplaced": false,
-          "replacedNote": null,
-          "isLogistic": false
-        },
-        {
-          "time": "15:30",
-          "name": "🧁 Lafayette Bakery — última merienda",
-          "desc": "Pasteles de autor en NoHo. La última merienda dulce antes de volver.",
-          "addr": null,
-          "tags": [
-            {
-              "key": "bakery",
-              "label": "Bakery"
-            }
-          ],
-          "tip": null,
-          "isNew": false,
-          "isReplaced": false,
-          "replacedNote": null,
-          "isLogistic": false
-        },
-        {
-          "time": "17:00",
-          "name": "🏨 Hotel — organizar maletas",
-          "desc": "Tarde para organizar las compras y descansar antes de la última noche.",
+          "time": "~17:30",
+          "name": "🏨 Hotel — dejar compras y organizar maletas",
+          "desc": "Dejar las bolsas del outlet, organizar y descansar un rato antes de la última noche.",
           "addr": null,
           "tags": [],
           "tip": null,
@@ -159,9 +152,26 @@ export default {
       "nightSub": "#45 Norteamérica · Tarot reader · Live music · Cocina hasta las 3:30am",
       "events": [
         {
-          "time": "18:30",
+          "time": "~18:15",
+          "name": "🧁 Lafayette Bakery — última merienda",
+          "desc": "Pasteles de autor en NoHo (380 Lafayette St), de camino al West Village. La última merienda dulce del viaje — un croissant suprême o lo que tenga del día, para llevar mientras se baja hacia Crane Club.",
+          "addr": "📍 380 Lafayette St, NoHo",
+          "tags": [
+            {
+              "key": "bakery",
+              "label": "Bakery"
+            }
+          ],
+          "tip": null,
+          "isNew": false,
+          "isReplaced": false,
+          "replacedNote": null,
+          "isLogistic": false
+        },
+        {
+          "time": "~18:45",
           "name": "🥩 Cena — Crane Club (NYT Top 100)",
-          "desc": "Parrilla Mibrasa, dry-aged steaks, burger de wagyu (solo 17:30–18h). O explorar Grove St.",
+          "desc": "Parrilla Mibrasa, dry-aged steaks. O explorar Grove St. (Nota: el burger de wagyu solo lo sirven 17:30–18h, así que hoy con la vuelta del outlet probablemente se pase — ir por los steaks.)",
           "addr": "Reservar en Resy. West Village.",
           "tags": [
             {
