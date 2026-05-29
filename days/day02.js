@@ -133,10 +133,10 @@ export default {
           "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": true
         },
         {
-          "time": "~21:00",
+          "time": "21:00",
           "name": "🍸 Employees Only — 510 Hudson St (RESERVA)",
           "desc": "Tarot reader en la entrada — pasar su filtro. Live music toda la noche, coctelería clásica perfecta y cocina hasta las 3:30am, así que también resuelve la cena post-Rock. Para Pablo: clásicos ejecutados a la perfección.",
-          "addr": "✅ Reserva confirmada · Miércoles 3 · 510 Hudson St, West Village",
+          "addr": "✅ Reserva confirmada · Miércoles 3, 21:00 · 510 Hudson St, West Village",
           "tags": [{ "key": "bar", "label": "Bar" }, { "key": "must", "label": "Must" }],
           "tip": null, "isNew": true, "isReplaced": false, "replacedNote": null, "isLogistic": false
         },
